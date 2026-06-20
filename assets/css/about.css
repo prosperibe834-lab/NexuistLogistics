@@ -1,0 +1,492 @@
+:root {
+  /* ==========================================
+     GLOBAL TOKENS & BRAND GRADIENTS
+     ========================================== */
+  --brand-gradient-primary: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --brand-gradient-dark: linear-gradient(145deg, #0b1528 0%, #040814 100%);
+  --brand-gradient-accent: linear-gradient(90deg, #38ef7d 0%, #11998e 100%);
+
+  /* ==========================================
+     LIGHT MODE CONFIGURATION
+     ========================================== */
+  --light-bg-main: #f8fafc;
+  --light-bg-card: #ffffff;
+  --light-bg-hover: #f1f5f9;
+  --light-text-main: #0f172a;
+  --light-text-muted: #475569;
+  --light-text-ghost: #94a3b8;
+  --light-primary: #0284c7;
+  --light-accent: #06b6d4;
+  --light-border: #e2e8f0;
+
+  /* ==========================================
+     DARK MODE CONFIGURATION 
+     ========================================== */
+  --dark-bg-main: #070d19;
+  --dark-bg-card: #0f1a30;
+  --dark-bg-hover: #172645;
+  --dark-text-main: #f8fafc;
+  --dark-text-muted: #94a3b8;
+  --dark-text-ghost: #64748b;
+  --dark-primary: #38bdf8;
+  --dark-accent: #22d3ee;
+  --dark-border: #1e293b;
+
+  /* ==========================================
+     UNIVERSAL UTILITY STATUSES (Logistics)
+     ========================================== */
+  --status-transit: #f59e0b;
+  --status-delivered: #10b981;
+  --status-failed: #ef4444;
+  --status-pending: #6366f1;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--light-bg-main);
+  color: var(--light-text-main);
+  font-family: 'Inter', sans-serif;
+  top: 0 !important;
+}
+
+body.dark-theme {
+  background-color: var(--dark-bg-main);
+  color: var(--dark-text-main);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+}
+
+/* ==========================================
+   FINTECH LOGISTICS PRELOADER COMPONENT
+   ========================================== */
+.nx-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light-bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+body.dark-theme .nx-preloader {
+  background-color: var(--dark-bg-main);
+}
+
+.nx-preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nx-loader-radar {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nx-radar-icon {
+  font-size: 2.25rem;
+  color: var(--light-primary);
+  z-index: 2;
+  animation: radarRotate 2.5s linear infinite;
+}
+
+body.dark-theme .nx-radar-icon {
+  color: var(--dark-primary);
+}
+
+.nx-radar-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--light-accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: radarPulse 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+body.dark-theme .nx-radar-pulse {
+  border-color: var(--dark-accent);
+}
+
+.nx-preloader-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--light-text-main);
+  animation: textFadePulse 1.8s ease-in-out infinite;
+}
+
+body.dark-theme .nx-preloader-text {
+  color: var(--dark-text-main);
+}
+
+.nx-progress-bar-wrapper {
+  width: 160px;
+  height: 4px;
+  background-color: var(--light-border);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+body.dark-theme .nx-progress-bar-wrapper {
+  background-color: var(--dark-border);
+}
+
+.nx-progress-bar-fill {
+  height: 100%;
+  width: 40%;
+  background: var(--brand-gradient-primary);
+  border-radius: 10px;
+  position: absolute;
+  left: -40%;
+  animation: trackingLineVelocity 1.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes radarRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes radarPulse {
+  0% { transform: scale(0.4); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+@keyframes textFadePulse {
+  0%, 100% { opacity: 0.8; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+}
+@keyframes trackingLineVelocity {
+  0% { left: -40%; width: 30%; }
+  50% { width: 60%; }
+  100% { left: 100%; width: 30%; }
+}
+
+.nx-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gradient-text {
+  background: var(--brand-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+   HEADER & NAVBAR ARCHITECTURE
+   ========================================== */
+.nx-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light-border);
+}
+
+body.dark-theme .nx-header {
+  background-color: rgba(15, 26, 48, 0.8);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.nx-navbar {
+  max-width: 1280px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nx-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nx-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nx-logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--light-text-main);
+}
+
+body.dark-theme .nx-logo-text {
+  color: var(--dark-text-main);
+}
+
+.nx-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nx-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--light-text-muted);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+body.dark-theme .nx-nav-link {
+  color: var(--dark-text-muted);
+}
+
+.nx-nav-link:hover, .nx-nav-link.active {
+  color: var(--light-primary);
+  background-color: var(--light-bg-hover);
+}
+
+body.dark-theme .nx-nav-link:hover, body.dark-theme .nx-nav-link.active {
+  color: var(--dark-primary);
+  background-color: var(--dark-bg-hover);
+}
+
+.nx-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nx-theme-btn {
+  background: none;
+  border: 1px solid var(--light-border);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text-main);
+}
+
+body.dark-theme .nx-theme-btn {
+  border-color: var(--dark-border);
+  color: var(--dark-text-main);
+}
+
+.nx-theme-btn:hover { background-color: var(--light-bg-hover); }
+body.dark-theme .nx-theme-btn:hover { background-color: var(--dark-bg-hover); }
+
+.nx-btn-secondary {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--light-text-main);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.dark-theme .nx-btn-secondary { color: var(--dark-text-main); }
+.nx-btn-secondary:hover { opacity: 0.8; }
+
+.nx-btn-primary {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  background: var(--brand-gradient-primary);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 242, 254, 0.25);
+}
+
+.nx-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35);
+}
+
+.nx-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: var(--light-text-main);
+}
+
+body.dark-theme .nx-hamburger { color: var(--dark-text-main); }
+
+/* Responsive Media Breakdown Rules */
+@media (max-width: 1024px) {
+  .nx-btn-secondary { display: none; }
+}
+
+@media (max-width: 768px) {
+  .nx-hamburger { display: block; }
+  .nx-nav-menu {
+    position: absolute;
+    top: 72px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: var(--light-bg-card);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+    gap: 16px;
+    transition: left 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+    border-top: 1px solid var(--light-border);
+  }
+  body.dark-theme .nx-nav-menu {
+    background-color: var(--dark-bg-card);
+    border-top: 1px solid var(--dark-border);
+  }
+  .nx-nav-menu.mobile-active { left: 0; }
+  .nx-nav-item { width: 100%; }
+  .nx-nav-link { width: 100%; padding: 14px 16px; font-size: 1.05rem; }
+  .nx-btn-primary { display: none; }
+}
+
+/* ==========================================
+   BOTTOM-LEFT FINTECH TRANSLATOR DROPDOWN WIDGET
+   ========================================== */
+.nx-global-translator {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 99999;
+  font-family: 'Inter', sans-serif;
+}
+
+.nx-trans-trigger {
+  background-color: var(--light-bg-card);
+  border: 1px solid var(--light-border);
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--light-text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-theme .nx-trans-trigger {
+  background-color: var(--dark-bg-card);
+  border-color: var(--dark-border);
+  color: var(--dark-text-main);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nx-trans-trigger i { font-size: 1.2rem; transition: transform 0.2s ease; }
+.nx-global-translator.open .nx-trans-trigger i { transform: rotate(180deg); }
+
+.nx-trans-menu {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  width: 260px;
+  max-height: 340px;
+  background-color: var(--light-bg-card);
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+body.dark-theme .nx-trans-menu {
+  background-color: var(--dark-bg-card);
+  border-color: var(--dark-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.nx-global-translator.open .nx-trans-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nx-trans-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid var(--light-border);
+}
+
+body.dark-theme .nx-trans-search { border-color: var(--dark-border); }
+.nx-trans-search i { color: var(--light-text-ghost); font-size: 1.1rem; }
+
+#nxLangSearch {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--light-text-main);
+}
+
+body.dark-theme #nxLangSearch { color: var(--dark-text-main); }
+
+#nxContainer { list-style: none; overflow-y: auto; flex: 1; padding: 6px; }
+#nxContainer li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--light-text-muted);
+}
+
+body.dark-theme #nxContainer li { color: var(--dark-text-muted); }
+#nxContainer li:hover { background-color: var(--light-bg-hover); color: var(--light-primary); }
+body.dark-theme #nxContainer li:hover { background-color: var(--dark-bg-hover); color: var(--dark-primary); }
+
+/* Global Google Top Frame Hider Stripper */
+.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .skiptranslate, .goog-te-spinner-pos {
+  display: none !important;
+}

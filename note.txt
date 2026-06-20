@@ -1,0 +1,62 @@
+:root {
+  /* ==========================================
+     GLOBAL TOKENS & BRAND GRADIENTS
+     ========================================== */
+  --brand-gradient-primary: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --brand-gradient-dark: linear-gradient(145deg, #0b1528 0%, #040814 100%);
+  --brand-gradient-accent: linear-gradient(90deg, #38ef7d 0%, #11998e 100%);
+
+  /* ==========================================
+     LIGHT MODE CONFIGURATION
+     ========================================== */
+  --light-bg-main: #f8fafc;
+  --light-bg-card: #ffffff;
+  --light-bg-hover: #f1f5f9;
+  --light-text-main: #0f172a;
+  --light-text-muted: #475569;
+  --light-text-ghost: #94a3b8;
+  --light-primary: #0284c7;
+  --light-accent: #06b6d4;
+  --light-border: #e2e8f0;
+
+  /* ==========================================
+     DARK MODE CONFIGURATION 
+     ========================================== */
+  --dark-bg-main: #070d19;
+  --dark-bg-card: #0f1a30;
+  --dark-bg-hover: #172645;
+  --dark-text-main: #f8fafc;
+  --dark-text-muted: #94a3b8;
+  --dark-text-ghost: #64748b;
+  --dark-primary: #38bdf8;
+  --dark-accent: #22d3ee;
+  --dark-border: #1e293b;
+
+  /* ==========================================
+     UNIVERSAL UTILITY STATUSES (Logistics)
+     ========================================== */
+  --status-transit: #f59e0b;
+  --status-delivered: #10b981;
+  --status-failed: #ef4444;
+  --status-pending: #6366f1;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--light-bg-main);
+  color: var(--light-text-main);
+  font-family: 'Inter', sans-serif;
+  top: 0 !important;
+}
+
+body.dark-theme {
+  background-color: var(--dark-bg-main);
+  color: var(--dark-text-main);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+}

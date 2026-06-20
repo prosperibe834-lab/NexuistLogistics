@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexuistTrack — Logistics Management Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div id="nxPreloader" class="nx-preloader">
+        <div class="nx-preloader-content">
+            <div class="nx-loader-radar">
+                <div class="nx-radar-pulse"></div>
+                <i class='bx bx-radar nx-radar-icon'></i>
+            </div>
+            <h1 class="nx-preloader-text">
+                Nexuist<span class="gradient-text">Track</span>
+            </h1>
+            <div class="nx-progress-bar-wrapper">
+                <div class="nx-progress-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="nx-header">
+        <nav class="nx-navbar">
+            <a href="index.html" class="nx-logo-container">
+                <img src="assets/images/NexuistTracking Logo.png" alt="NexuistTrack Logo" class="nx-logo">
+                <span class="nx-logo-text">Nexuist<span class="gradient-text">Track</span></span>
+            </a>
+
+            <ul class="nx-nav-menu" id="navMenu">
+                <li class="nx-nav-item">
+                    <a href="index.html" class="nx-nav-link">
+                        <i class='bx bx-grid-alt'></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nx-nav-item">
+                    <a href="services.html" class="nx-nav-link">
+                        <i class='bx bx-package'></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="nx-nav-item">
+                    <a href="about.html" class="nx-nav-link">
+                        <i class='bx bx-info-circle'></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nx-nav-item">
+                    <a href="contact.html" class="nx-nav-link">
+                        <i class='bx bx-support'></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nx-nav-actions">
+                <button id="themeToggle" class="nx-theme-btn" aria-label="Toggle Interface Theme">
+                    <i class='bx bx-moon theme-icon'></i>
+                </button>
+                <a href="track.html" class="nx-btn-secondary">
+                    <i class='bx bx-radar'></i>
+                    <span>Track Shipment</span>
+                </a>
+                <a href="quote.html" class="nx-btn-primary">
+                    <span>Get a Quote</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+                <button class="nx-hamburger" id="menuToggle" aria-label="Open Mobile Menu">
+                    <i class='bx bx-menu-alt-right'></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ==========================================
+     PREMIUM FINTECH LOGISTICS HERO SECTION 
+     ========================================== -->
+    <section class="nx-hero">
+        <!-- Embedded Full-Screen Background Video Overlay -->
+        <div class="nx-hero-video-wrapper">
+            <video autoplay loop muted playsinline class="nx-hero-video">
+                <!-- 1. Your local asset (Make sure your downloaded video is renamed to 'hero-logistics.mp4' inside assets/images/) -->
+                <source src="assets/images/hero-logistics.mp4" type="video/mp4">
+
+                <!-- 2. Guaranteed High-Speed Highway Cargo Logistics Fallback Link -->
+                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+            </video>
+            <div class="nx-hero-overlay"></div>
+        </div>
+
+        <div class="nx-hero-container">
+            <!-- Live Trust Badge Counter Indicator -->
+            <div class="nx-hero-badge" data-aos="fade-down">
+                <span class="nx-badge-pulse"></span>
+                <i class='bx bx-shield-quarter'></i>
+                <span>Trusted by 10,000+ businesses worldwide</span>
+            </div>
+
+            <!-- Main Headlines -->
+            <h1 class="nx-hero-title">
+                <span class="gradient-text">NexuistTrack</span>, Delivered <br>
+                with <span class="accent-glow-text">Precision</span>
+            </h1>
+
+            <p class="nx-hero-subtitle">
+                From air freight to automated ocean cargo vectors, we engineer high-velocity end-to-end logistics
+                infrastructure connecting your business with over 180+ global markets seamlessly.
+            </p>
+
+            <!-- Advanced Fintech Tracking Input Interface Grid -->
+            <div class="nx-tracker-card">
+                <form action="track.html" method="GET" class="nx-tracker-form">
+                    <div class="nx-input-group">
+                        <i class='bx bx-search-alt nx-search-icon'></i>
+                        <input type="text" name="tracking_id" id="nxHeroTrackInput"
+                            placeholder="Enter your tracking or container number..." required autocomplete="off">
+                    </div>
+                    <button type="submit" class="nx-tracker-btn">
+                        <span>Track Shipment</span>
+                        <i class='bx bx-radar bx-spin-hover'></i>
+                    </button>
+                </form>
+                <p class="nx-tracker-hint">Enter your tracking number to initiate real-time satellite radar updates on
+                    your shipment.</p>
+            </div>
+
+            <!-- Real-time Live Infrastructure Metrics Feed Components -->
+            <div class="nx-hero-metrics">
+                <div class="nx-metric-box">
+                    <h3 class="nx-metric-val">99.4%</h3>
+                    <p class="nx-metric-lbl">On-Time Accuracy</p>
+                </div>
+                <div class="nx-metric-box">
+                    <h3 class="nx-metric-val">1.2M+</h3>
+                    <p class="nx-metric-lbl">Tons Delivered</p>
+                </div>
+                <div class="nx-metric-box">
+                    <h3 class="nx-metric-val">&lt; 14m</h3>
+                    <p class="nx-metric-lbl">Average Sorting Latency</p>
+                </div>
+            </div>
+
+            <!-- Animated Scroll Mouse Cues Layout Wheel -->
+            <div class="nx-scroll-indicator">
+                <div class="nx-mouse-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Counter Section starts here -->
+
+    <section class="nx-metrics-section">
+        <div class="nx-grid-mesh-overlay"></div>
+
+        <div class="nx-metrics-container">
+            <div class="nx-metric-card" data-aos="fade-up">
+                <div class="nx-icon-wrapper">
+                    <i class='bx bx-globe'></i>
+                </div>
+                <div class="nx-counter-wrapper">
+                    <h2 class="nx-counter-num" data-target="190">0</h2>
+                    <span class="nx-counter-plus">+</span>
+                </div>
+                <p class="nx-metric-label">Countries Served</p>
+            </div>
+
+            <div class="nx-metric-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="nx-icon-wrapper">
+                    <i class='bx bx-package'></i>
+                </div>
+                <div class="nx-counter-wrapper">
+                    <h2 class="nx-counter-num" data-target="2">0</h2>
+                    <span class="nx-counter-plus">M+</span>
+                </div>
+                <p class="nx-metric-label">Shipments Delivered</p>
+            </div>
+
+            <div class="nx-metric-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="nx-icon-wrapper">
+                    <i class='bx bx-time-five'></i>
+                </div>
+                <div class="nx-counter-wrapper">
+                    <h2 class="nx-counter-num" data-target="25">0</h2>
+                    <span class="nx-counter-plus">+</span>
+                </div>
+                <p class="nx-metric-label">Years Experience</p>
+            </div>
+
+            <div class="nx-metric-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="nx-icon-wrapper">
+                    <i class='bx bx-badge-check'></i>
+                </div>
+                <div class="nx-counter-wrapper">
+                    <h2 class="nx-counter-num" data-target="99">0</h2>
+                    <span class="nx-counter-plus">%</span>
+                </div>
+                <p class="nx-metric-label">Delivery Success</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter section ends here -->
+
+
+    <!-- ==========================================
+     PREMIUM FINTECH SERVICES SECTION
+     ========================================== -->
+    <section class="nx-services-section">
+        <div class="nx-services-container">
+
+            <!-- Header Text Matrix Layout Area -->
+            <div class="nx-services-header">
+                <div class="nx-services-badge">
+                    <i class='bx bx-cube-alt'></i>
+                    <span>Our Services</span>
+                </div>
+                <h2 class="nx-services-title">Comprehensive Logistics Solutions</h2>
+                <p class="nx-services-subtitle">From express courier vectors to deep ocean freight networks, we deliver
+                    scalable digital infrastructure tailored for enterprise asset velocity.</p>
+            </div>
+
+            <!-- 3x2 High-End Card Presentation Grid Matrix -->
+            <div class="nx-services-grid">
+
+                <!-- Card 1: Domestic Shipping -->
+                <div class="nx-service-card">
+                    <div class="nx-card-media">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=600"
+                            alt="Domestic Shipping" loading="lazy">
+                        <div class="nx-media-overlay"></div>
+                        <div class="nx-card-icon-floating">
+                            <i class='bx bx-truck'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-body">
+                        <h3 class="nx-card-title">Domestic Shipping</h3>
+                        <p class="nx-card-text">Fast and reliable nationwide delivery with real-time tracking. Same-day
+                            and next-day options available for urgent shipments.</p>
+                        <a href="services/domestic.html" class="nx-card-link">
+                            <span>Learn More</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: International Freight -->
+                <div class="nx-service-card">
+                    <div class="nx-card-media">
+                        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=600"
+                            alt="International Freight" loading="lazy">
+                        <div class="nx-media-overlay"></div>
+                        <div class="nx-card-icon-floating">
+                            <i class='bx bx-globe'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-body">
+                        <h3 class="nx-card-title">International Freight</h3>
+                        <p class="nx-card-text">Seamless cross-border logistics to 190+ countries. Customs clearance and
+                            documentation handled by our expert team.</p>
+                        <a href="services/international.html" class="nx-card-link">
+                            <span>Learn More</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Air Cargo -->
+                <div class="nx-service-card">
+                    <div class="nx-card-media">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600"
+                            alt="Air Cargo" loading="lazy">
+                        <div class="nx-media-overlay"></div>
+                        <div class="nx-card-icon-floating">
+                            <i class='bx bx-plane-takeoff'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-body">
+                        <h3 class="nx-card-title">Air Cargo</h3>
+                        <p class="nx-card-text">Express air freight for time-critical shipments. Priority handling and
+                            guaranteed delivery windows worldwide.</p>
+                        <a href="services/air-cargo.html" class="nx-card-link">
+                            <span>Learn More</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Ocean Freight -->
+                <div class="nx-service-card">
+                    <div class="nx-card-media">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600"
+                            alt="Ocean Freight" loading="lazy">
+                        <div class="nx-media-overlay"></div>
+                        <div class="nx-card-icon-floating">
+                            <i class='bx bx-ship'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-body">
+                        <h3 class="nx-card-title">Ocean Freight</h3>
+                        <p class="nx-card-text">Cost-effective sea cargo solutions for large shipments. FCL and LCL
+                            options with port-to-port and door-to-door service.</p>
+                        <a href="services/ocean-freight.html" class="nx-card-link">
+                            <span>Learn More</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Rail Transport -->
+                <div class="nx-service-card">
+                    <div class="nx-card-media">
+                        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=600"
+                            alt="Rail Transport" loading="lazy">
+                        <div class="nx-media-overlay"></div>
+                        <div class="nx-card-icon-floating">
+                            <i class='bx bx-train'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-body">
+                        <h3 class="nx-card-title">Rail Transport</h3>
+                        <p class="nx-card-text">Efficient overland freight via rail networks. Ideal for heavy cargo
+                            across continental routes with minimal environmental footprints.</p>
+                        <a href="services/rail.html" class="nx-card-link">
+                            <span>Learn More</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Warehousing & Fulfillment -->
+                <div class="nx-service-card">
+                    <div class="nx-card-media">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600"
+                            alt="Warehousing" loading="lazy">
+                        <div class="nx-media-overlay"></div>
+                        <div class="nx-card-icon-floating">
+                            <i class='bx bx-store-alt'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-body">
+                        <h3 class="nx-card-title">Warehousing & Fulfillment</h3>
+                        <p class="nx-card-text">Secure storage facilities with smart inventory management. Pick, pack,
+                            and ship services optimized for modern e-commerce builds.</p>
+                        <a href="services/fulfillment.html" class="nx-card-link">
+                            <span>Learn More</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Workflow section starts here -->
+    <section class="nx-workflow-section">
+        <div class="nx-workflow-container">
+
+            <div class="nx-workflow-header">
+                <div class="nx-workflow-badge">
+                    <i class='bx bx-git-commit'></i>
+                    <span>Simple Process</span>
+                </div>
+                <h2 class="nx-workflow-title">Engineered For Velocity</h2>
+                <p class="nx-workflow-subtitle">Fulfill, monitor, and scale your operations globally in four
+                    high-efficiency automated vectors.</p>
+            </div>
+
+            <div class="nx-timeline-wrapper">
+                <div class="nx-timeline-progress-line">
+                    <div class="nx-line-fill"></div>
+                </div>
+
+                <div class="nx-timeline-grid">
+
+                    <div class="nx-step-card" data-step="1">
+                        <div class="nx-step-node">
+                            <span class="nx-node-num">01</span>
+                        </div>
+                        <div class="nx-card-inner">
+                            <div class="nx-step-icon-box">
+                                <i class='bx bx-file-blank'></i>
+                            </div>
+                            <h3 class="nx-step-title">Create Shipment</h3>
+                            <p class="nx-step-desc">Request a quote or provision an instant digital container bill of
+                                lading on our cloud-managed platform interface securely within minutes.</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-step-card" data-step="2">
+                        <div class="nx-step-node">
+                            <span class="nx-node-num">02</span>
+                        </div>
+                        <div class="nx-card-inner">
+                            <div class="nx-step-icon-box">
+                                <i class='bx bx-transfer-alt'></i>
+                            </div>
+                            <h3 class="nx-step-title">Pickup &amp; Routing</h3>
+                            <p class="nx-step-desc">Coordinate an on-demand localized terminal courier dispatch or
+                                safely utilize any of our 500+ decentralized multi-modal global cargo waypoints.</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-step-card" data-step="3">
+                        <div class="nx-step-node">
+                            <span class="nx-node-num">03</span>
+                        </div>
+                        <div class="nx-card-inner">
+                            <div class="nx-step-icon-box">
+                                <i class='bx bx-radar'></i>
+                            </div>
+                            <h3 class="nx-step-title">Radar Tracking</h3>
+                            <p class="nx-step-desc">Monitor asset positioning 24/7 with direct multi-satellite telemetry
+                                feeds and automated real-time secure web hook notification pulses.</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-step-card" data-step="4">
+                        <div class="nx-step-node">
+                            <span class="nx-node-num">04</span>
+                        </div>
+                        <div class="nx-card-inner">
+                            <div class="nx-step-icon-box">
+                                <i class='bx bx-check-shield'></i>
+                            </div>
+                            <h3 class="nx-step-title">Delivered Securely</h3>
+                            <p class="nx-step-desc">Your package updates securely on delivery confirmation via automated
+                                proof-of-handover tokens, ensuring precision compliance thresholds.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow sections ends here -->
+
+    <!-- Global Network starts here -->
+    <section class="nx-network-section">
+        <div class="nx-map-graphic-underlay"></div>
+
+        <div class="nx-network-container">
+
+            <div class="nx-network-console">
+                <div class="nx-network-badge">
+                    <i class='bx bx-planet bx-spin-hover'></i>
+                    <span>Global Infrastructure Vectors</span>
+                </div>
+
+                <h2 class="nx-network-title">
+                    Connecting Commerce <br>
+                    <span class="gradient-accent-text">Without Borders</span>
+                </h2>
+
+                <p class="nx-network-subtitle">
+                    Our ultra-low latency routing architecture bridges transit pipelines across 190+ sovereign regions,
+                    utilizing deep-sea cargo pathways and smart terminal hubs.
+                </p>
+
+                <div class="nx-console-panel">
+                    <div class="nx-panel-metric">
+                        <div class="nx-metric-icon shadow-orange">
+                            <i class='bx bx-map-pin'></i>
+                        </div>
+                        <div class="nx-metric-info">
+                            <h4>500+</h4>
+                            <p>Smart Touchpoints</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-panel-metric">
+                        <div class="nx-metric-icon shadow-blue">
+                            <i class='bx bx-git-merge'></i>
+                        </div>
+                        <div class="nx-metric-info">
+                            <h4>50+</h4>
+                            <p>Strategic Air Vectors</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-panel-metric">
+                        <div class="nx-metric-icon shadow-green">
+                            <i class='bx bx-anchor'></i>
+                        </div>
+                        <div class="nx-metric-info">
+                            <h4>100+</h4>
+                            <p>Deep Water Ports</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nx-network-modes">
+                    <button class="nx-mode-btn active" data-filter="all">
+                        <i class='bx bx-layer'></i> <span>Full Mesh</span>
+                    </button>
+                    <button class="nx-mode-btn" data-filter="air">
+                        <i class='bx bx-plane-takeoff'></i> <span>Air Express</span>
+                    </button>
+                    <button class="nx-mode-btn" data-filter="sea">
+                        <i class='bx bx-ship'></i> <span>Maritime Lines</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="nx-network-regions">
+
+                <div class="nx-region-card" data-routes="air">
+                    <div class="nx-region-indicator"></div>
+                    <div class="nx-region-main">
+                        <div class="nx-region-meta">
+                            <i class='bx bx-map-alt'></i>
+                            <h3>North America</h3>
+                        </div>
+                        <p class="nx-region-hubs">USA, Canada, Mexico</p>
+                    </div>
+                    <i class='bx bx-chevron-right nx-card-arrow'></i>
+                </div>
+
+                <div class="nx-region-card" data-routes="air sea">
+                    <div class="nx-region-indicator"></div>
+                    <div class="nx-region-main">
+                        <div class="nx-region-meta">
+                            <i class='bx bx-map-alt'></i>
+                            <h3>Europe</h3>
+                        </div>
+                        <p class="nx-region-hubs">UK, Germany, France, Netherlands</p>
+                    </div>
+                    <i class='bx bx-chevron-right nx-card-arrow'></i>
+                </div>
+
+                <div class="nx-region-card" data-routes="air sea">
+                    <div class="nx-region-indicator"></div>
+                    <div class="nx-region-main">
+                        <div class="nx-region-meta">
+                            <i class='bx bx-map-alt'></i>
+                            <h3>Asia Pacific</h3>
+                        </div>
+                        <p class="nx-region-hubs">China, Japan, Singapore, Australia</p>
+                    </div>
+                    <i class='bx bx-chevron-right nx-card-arrow'></i>
+                </div>
+
+                <div class="nx-region-card" data-routes="sea">
+                    <div class="nx-region-indicator"></div>
+                    <div class="nx-region-main">
+                        <div class="nx-region-meta">
+                            <i class='bx bx-map-alt'></i>
+                            <h3>Middle East</h3>
+                        </div>
+                        <p class="nx-region-hubs">UAE, Saudi Arabia, Qatar</p>
+                    </div>
+                    <i class='bx bx-chevron-right nx-card-arrow'></i>
+                </div>
+
+                <div class="nx-region-card" data-routes="air sea">
+                    <div class="nx-region-indicator"></div>
+                    <div class="nx-region-main">
+                        <div class="nx-region-meta">
+                            <i class='bx bx-map-alt'></i>
+                            <h3>Africa</h3>
+                        </div>
+                        <p class="nx-region-hubs">Nigeria, South Africa, Kenya, Egypt</p>
+                    </div>
+                    <i class='bx bx-chevron-right nx-card-arrow'></i>
+                </div>
+
+                <div class="nx-region-card" data-routes="sea">
+                    <div class="nx-region-indicator"></div>
+                    <div class="nx-region-main">
+                        <div class="nx-region-meta">
+                            <i class='bx bx-map-alt'></i>
+                            <h3>South America</h3>
+                        </div>
+                        <p class="nx-region-hubs">Brazil, Argentina, Chile</p>
+                    </div>
+                    <i class='bx bx-chevron-right nx-card-arrow'></i>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Global Network ends here -->
+
+
+    <!-- Why us starts here  -->
+
+    <section class="nx-trust-section">
+        <div class="nx-trust-container">
+
+            <div class="nx-graphic-stage">
+                <div class="nx-vector-carrier-card">
+                    <div class="nx-card-mesh-bg"></div>
+
+                    <div class="nx-procedural-box">
+                        <div class="nx-box-top-flap"></div>
+                        <div class="nx-box-brand-core">
+                            <div class="nx-box-logo">
+                                <i class='bx bx-navigation'></i>
+                            </div>
+                            <div class="nx-box-text-logo">NEXUIST</div>
+                            <span class="nx-box-tagline">LOGISTICS LAYER</span>
+                        </div>
+                        <div class="nx-box-tape"></div>
+                    </div>
+
+                    <div class="nx-hologram-pulse-ring"></div>
+                </div>
+
+                <div class="nx-floating-badge badge-satisfaction">
+                    <div class="nx-badge-pulse-dot"></div>
+                    <div class="nx-badge-body">
+                        <span class="nx-badge-val">99.8%</span>
+                        <span class="nx-badge-lbl">Satisfaction Index</span>
+                    </div>
+                </div>
+
+                <div class="nx-floating-badge badge-insurance">
+                    <div class="nx-badge-icon-wrap">
+                        <i class='bx bx-shield-quarter'></i>
+                    </div>
+                    <div class="nx-badge-body">
+                        <span class="nx-badge-val">$100K</span>
+                        <span class="nx-badge-lbl">Secured Cap / Unit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nx-trust-console">
+                <div class="nx-trust-badge">
+                    <i class='bx bx-check-shield'></i>
+                    <span>Institutional Risk Mitigation</span>
+                </div>
+
+                <h2 class="nx-trust-title">Trusted by Enterprise Organizations of All Scales</h2>
+                <p class="nx-trust-subtitle">From seed-stage startups to cross-continental logistics pipelines, our
+                    infrastructure maintains strict regulatory and velocity compliance protocols.</p>
+
+                <div class="nx-trust-features-grid">
+
+                    <div class="nx-feature-row">
+                        <div class="nx-feature-icon-box orange-glow">
+                            <i class='bx bx-shield-alt-2'></i>
+                        </div>
+                        <div class="nx-feature-details">
+                            <h3>Fully Insured Infrastructure</h3>
+                            <p>Comprehensive cargo protection matrices provisioning up to $100,000 per shipment vector
+                                with immediate collateral liquidation.</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-feature-row">
+                        <div class="nx-feature-icon-box cyan-glow">
+                            <i class='bx bx-unite'></i>
+                        </div>
+                        <div class="nx-feature-details">
+                            <h3>Real-Time Telemetry</h3>
+                            <p>Multi-satellite GPS asset tracking loops feeding active positioning variables straight
+                                into your master operational dashboard.</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-feature-row">
+                        <div class="nx-feature-icon-box blue-glow">
+                            <i class='bx bx-stopwatch'></i>
+                        </div>
+                        <div class="nx-feature-details">
+                            <h3>SLA Delivery Guarantee</h3>
+                            <p>Maintaining a documented 99.8% on-time milestone delivery threshold backed by automatic
+                                programmatic refund clauses.</p>
+                        </div>
+                    </div>
+
+                    <div class="nx-feature-row">
+                        <div class="nx-feature-icon-box purple-glow">
+                            <i class='bx bx-support'></i>
+                        </div>
+                        <div class="nx-feature-details">
+                            <h3>24/7 Network Operations</h3>
+                            <p>Direct live engineer support access layers standing by to optimize custom routing paths
+                                and transit variables at any hour.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why us ends here -->
+
+    <!--  Testimonials starts here -->
+
+    <!-- ==========================================
+     PREMIUM FINTECH TESTIMONIAL BOARD MATRIX
+     ========================================== -->
+    <section class="nx-reviews-section">
+        <div class="nx-reviews-container">
+
+            <!-- Header Console Layer -->
+            <div class="nx-reviews-header">
+                <div class="nx-reviews-badge">
+                    <i class='bx bxs-zap'></i>
+                    <span>Platform Consensus</span>
+                </div>
+                <h2 class="nx-reviews-title">Validated by Operations Leaders</h2>
+                <p class="nx-reviews-subtitle">See how global enterprises scale latency-critical distribution pipelines
+                    using our integrated logistics engine.</p>
+            </div>
+
+            <!-- Interactive Carousel / Grid System Display Frame -->
+            <div class="nx-reviews-carousel">
+                <div class="nx-reviews-track">
+
+                    <!-- Client Card 01: Sarah Chen -->
+                    <div class="nx-review-card">
+                        <div class="nx-card-top-row">
+                            <div class="nx-client-profile">
+                                <div class="nx-avatar-frame">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&amp;w=150&amp;auto=format&amp;fit=crop"
+                                        alt="Sarah Chen" class="nx-client-img">
+                                    <div class="nx-verified-dot"><i class='bx bxs-badge-check'></i></div>
+                                </div>
+                                <div class="nx-client-meta">
+                                    <h3>Sarah Chen</h3>
+                                    <p>Supply Chain Director, TechFlow</p>
+                                </div>
+                            </div>
+                            <div class="nx-trust-rating">
+                                <div class="nx-stars-row">
+                                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                        class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                                </div>
+                                <span class="nx-metric-tag green-tag">Verified Hub API</span>
+                            </div>
+                        </div>
+                        <p class="nx-review-quote">"Nexuist Logistics completely overhauled our inventory turnover
+                            rates. Their programmatic real-time pipeline telemetry allowed us to isolate freight
+                            bottlenecks and immediately compress localized delivery costs by **30%**."</p>
+                        <div class="nx-card-footer-metrics">
+                            <span><i class='bx bx-trending-up'></i> Cost: -30%</span>
+                            <span><i class='bx bx-time-five'></i> ETA Accuracy: 99.4%</span>
+                        </div>
+                    </div>
+
+                    <!-- Client Card 02: Michael Rodriguez -->
+                    <div class="nx-review-card">
+                        <div class="nx-card-top-row">
+                            <div class="nx-client-profile">
+                                <div class="nx-avatar-frame">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&amp;w=150&amp;auto=format&amp;fit=crop"
+                                        alt="Michael Rodriguez" class="nx-client-img">
+                                    <div class="nx-verified-dot"><i class='bx bxs-badge-check'></i></div>
+                                </div>
+                                <div class="nx-client-meta">
+                                    <h3>Michael Rodriguez</h3>
+                                    <p>Operations Manager, Global Imports</p>
+                                </div>
+                            </div>
+                            <div class="nx-trust-rating">
+                                <div class="nx-stars-row">
+                                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                        class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                                </div>
+                                <span class="nx-metric-tag blue-tag">Customs Verified</span>
+                            </div>
+                        </div>
+                        <p class="nx-review-quote">"Deploying international cargo pipelines used to introduce heavy
+                            clearing delays. The automated cross-border customs clearance assistance protocols embedded
+                            within the platform saved us over 120 operational hours this quarter."</p>
+                        <div class="nx-card-footer-metrics">
+                            <span><i class='bx bx-bolt-circle'></i> Saved: 120+ Hours</span>
+                            <span><i class='bx bx-globe'></i> Multi-Terminal Mesh</span>
+                        </div>
+                    </div>
+
+                    <!-- Client Card 03: Emily Watson -->
+                    <div class="nx-review-card">
+                        <div class="nx-card-top-row">
+                            <div class="nx-client-profile">
+                                <div class="nx-avatar-frame">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&amp;w=150&amp;auto=format&amp;fit=crop"
+                                        alt="Emily Watson" class="nx-client-img">
+                                    <div class="nx-verified-dot"><i class='bx bxs-badge-check'></i></div>
+                                </div>
+                                <div class="nx-client-meta">
+                                    <h3>Emily Watson</h3>
+                                    <p>Managing Director, StyleBox Online</p>
+                                </div>
+                            </div>
+                            <div class="nx-trust-rating">
+                                <div class="nx-stars-row">
+                                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                        class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                                </div>
+                                <span class="nx-metric-tag purple-tag">Enterprise SLA</span>
+                            </div>
+                        </div>
+                        <p class="nx-review-quote">"Outstanding e-commerce parcel fulfillment architecture! Our
+                            multi-vendor decentralized distribution lines have never performed this smoothly. The
+                            programmatic tracking metrics match live delivery states with perfect sync."</p>
+                        <div class="nx-card-footer-metrics">
+                            <span><i class='bx bx-package'></i> Full Auto-Fulfill</span>
+                            <span><i class='bx bx-shield-check'></i> 100% Insured Cap</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mobile Adaptive Segment Navigation Controls Pagers (Only rendering active steps on phones) -->
+                <div class="nx-carousel-indicators">
+                    <span class="nx-indicator-dot active" data-slide="0"></span>
+                    <span class="nx-indicator-dot" data-slide="1"></span>
+                    <span class="nx-indicator-dot" data-slide="2"></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Testimonials ends here -->
+
+    <!-- ==========================================
+     PREMIUM FINTECH PARTNER MARQUEE CONSOLE
+     ========================================== -->
+    <section class="nx-marquee-section">
+        <div class="nx-marquee-container">
+
+            <!-- Subtle Top-Tier Title Label -->
+            <div class="nx-marquee-header">
+                <span class="nx-marquee-caption">Institutional Trust Architecture</span>
+                <div class="nx-header-divider"></div>
+            </div>
+
+            <!-- The Infinite Dynamic Loop Track Frame -->
+            <div class="nx-marquee-viewport">
+                <div class="nx-marquee-track">
+
+                    <!-- ORIGINAL LOGO SET -->
+                    <div class="nx-logo-pill">
+                        <div class="nx-pill-icon-box"><i class='bx bx-terminal'></i></div>
+                        <span class="nx-logo-text">TechCorp</span>
+                    </div>
+
+                    <div class="nx-logo-pill">
+                        <div class="nx-pill-icon-box"><i class='bx bx-globe-alt'></i></div>
+                        <span class="nx-logo-text">Global Trade</span>
+                    </div>
+
+                    <div class="nx-logo-pill">
+                        <div class="nx-pill-icon-box"><i class='bx bx-pyramid'></i></div>
+                        <span class="nx-logo-text">Apex Industries</span>
+                    </div>
+
+                    <div class="nx-logo-pill">
+                        <div class="nx-pill-icon-box"><i class='bx bx-package'></i></div>
+                        <span class="nx-logo-text">Prime Logistics</span>
+                    </div>
+
+                    <div class="nx-logo-pill">
+                        <div class="nx-pill-icon-box"><i class='bx bx-store-alt'></i></div>
+                        <span class="nx-logo-text">Swift Commerce</span>
+                    </div>
+
+                    <div class="nx-logo-pill">
+                        <div class="nx-pill-icon-box"><i class='bx bx-objects-horizontal-left'></i></div>
+                        <span class="nx-logo-text">United Freight</span>
+                    </div>
+
+                    <!-- CLONED DUPLEX SET FOR PERFECT INFINITE GAPLESS GLIDE -->
+                    <div class="nx-logo-pill" aria-hidden="true">
+                        <div class="nx-pill-icon-box"><i class='bx bx-terminal'></i></div>
+                        <span class="nx-logo-text">TechCorp</span>
+                    </div>
+
+                    <div class="nx-logo-pill" aria-hidden="true">
+                        <div class="nx-pill-icon-box"><i class='bx bx-globe-alt'></i></div>
+                        <span class="nx-logo-text">Global Trade</span>
+                    </div>
+
+                    <div class="nx-logo-pill" aria-hidden="true">
+                        <div class="nx-pill-icon-box"><i class='bx bx-pyramid'></i></div>
+                        <span class="nx-logo-text">Apex Industries</span>
+                    </div>
+
+                    <div class="nx-logo-pill" aria-hidden="true">
+                        <div class="nx-pill-icon-box"><i class='bx bx-package'></i></div>
+                        <span class="nx-logo-text">Prime Logistics</span>
+                    </div>
+
+                    <div class="nx-logo-pill" aria-hidden="true">
+                        <div class="nx-pill-icon-box"><i class='bx bx-store-alt'></i></div>
+                        <span class="nx-logo-text">Swift Commerce</span>
+                    </div>
+
+                    <div class="nx-logo-pill" aria-hidden="true">
+                        <div class="nx-pill-icon-box"><i class='bx bx-objects-horizontal-left'></i></div>
+                        <span class="nx-logo-text">United Freight</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================
+     PREMIUM OPERATIONS GALLERY SHOWCASE
+     ========================================== -->
+    <section class="nx-gallery-section">
+        <div class="nx-container">
+
+            <div class="nx-gallery-header">
+                <div class="nx-badge">
+                    <i class='bx bx-camera'></i> <span>Infrastructure Lens</span>
+                </div>
+                <h2>Operational Excellence in Real-Time</h2>
+                <p>High-frequency logistical throughput powered by our proprietary architecture.</p>
+            </div>
+
+            <div class="nx-gallery-grid">
+                <!-- Gallery Item 1 -->
+                <!-- Card 01: Fleet Operations (Corrected Logistics Source) -->
+                <div class="nx-gallery-card">
+                    <div class="nx-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                            alt="Logistics Fleet Transport">
+                        <div class="nx-overlay">
+                            <i class='bx bx-expand-alt'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-content">
+                        <h4>Programmatic Fleet</h4>
+                        <p>Automated dispatch protocols</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="nx-gallery-card">
+                    <div class="nx-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=800&auto=format&fit=crop"
+                            alt="Fulfillment">
+                        <div class="nx-overlay">
+                            <i class='bx bx-expand-alt'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-content">
+                        <h4>Precision Fulfillment</h4>
+                        <p>Zero-latency handling units</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <!-- Card 03: Terminal Infrastructure (Updated Source) -->
+                <div class="nx-gallery-card">
+                    <div class="nx-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                            alt="Terminal Tech">
+                        <div class="nx-overlay">
+                            <i class='bx bx-expand-alt'></i>
+                        </div>
+                    </div>
+                    <div class="nx-card-content">
+                        <h4>Terminal Infrastructure</h4>
+                        <p>Scalable distribution mesh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ==========================================
+     PREMIUM FINTECH CTA / DEPLOYMENT MODULE
+     ========================================== -->
+<section class="nx-cta-section">
+    <div class="nx-cta-container">
+        
+        <!-- Ambient Background Animations -->
+        <div class="nx-ambient-glow glow-cyan"></div>
+        <div class="nx-ambient-glow glow-blue"></div>
+        <div class="nx-cta-mesh"></div>
+
+        <!-- Core Content Interface -->
+        <div class="nx-cta-interface">
+            <div class="nx-cta-badge">
+                <i class='bx bx-network-chart'></i>
+                <span>Enterprise Deployment</span>
+            </div>
+
+            <h2 class="nx-cta-title">Scale Your Distribution Architecture</h2>
+            <p class="nx-cta-subtitle">Integrate the Nexuist institutional logistics engine. Initiate high-velocity freight vectors or connect your supply chain directly via our secure telemetry API.</p>
+
+            <div class="nx-cta-actions">
+                <button class="nx-btn-dashs">
+                    <span class="nx-btn-text">Initialize Freight Vector</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                    <div class="nx-btn-glare"></div>
+                </button>
+                
+                <button class="nx-btn-dash">
+                    <i class='bx bx-radar'></i>
+                    <span>Access Telemetry Dashboard</span>
+                </button>
+            </div>
+
+            <!-- Micro-Trust Metrics (New Feature) -->
+            <div class="nx-cta-trust-matrix">
+                <div class="nx-trust-node">
+                    <i class='bx bx-check-shield'></i>
+                    <span>256-bit AES Encryption</span>
+                </div>
+                <div class="nx-trust-node">
+                    <i class='bx bx-data'></i>
+                    <span>Zero-Latency Sync</span>
+                </div>
+                <div class="nx-trust-node">
+                    <i class='bx bx-lock-alt'></i>
+                    <span>$100k Default Insured Cap</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mouse Tracking Spotlight Target -->
+        <div class="nx-cursor-spotlight"></div>
+    </div>
+</section>
+
+<!-- Footer section starts here -->
+
+<footer class="nx-vip-footer">
+    <div class="nx-footer-grid-mesh"></div>
+
+    <div class="nx-footer-container">
+        
+        <div class="nx-footer-brand-col">
+            <a href="index.html" class="nx-footer-logo-wrap">
+                <div class="nx-footer-logo-icon">
+                    <i class='bx bx-navigation'></i>
+                </div>
+                <span class="nx-footer-logo-text">NEXUIST<span class="logo-sub">LOGISTICS</span></span>
+            </a>
+            <p class="nx-footer-brand-desc">
+                High-frequency sovereign distribution networks and real-time ledger tracking loops engineered for modern asset velocity.
+            </p>
+            <div class="nx-footer-contact-matrix">
+                <a href="mailto:operations@nexuist.com" class="nx-contact-link-node">
+                    <i class='bx bx-envelope'></i>
+                    <span>operations@nexuist.com</span>
+                </a>
+                <a href="tel:+1233323383" class="nx-contact-link-node">
+                    <i class='bx bx-phone-call'></i>
+                    <span>+1 (233) 323-383</span>
+                </a>
+                <div class="nx-contact-link-node text-node">
+                    <i class='bx bx-map-pin'></i>
+                    <span>12 N Broadway Street, Middletown, DE, US</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Services Infrastructure</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="services/domestic.html" class="nx-anchor-vector">Domestic Shipping</a></li>
+                <li><a href="services/international.html" class="nx-anchor-vector">International Freight</a></li>
+                <li><a href="services/air-cargo.html" class="nx-anchor-vector">Air Cargo Routing</a></li>
+                <li><a href="services/ocean-freight.html" class="nx-anchor-vector">Maritime Mesh Lines</a></li>
+                <li><a href="services/fulfillment.html" class="nx-anchor-vector">Smart Warehousing</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Company Structure</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="company/about.html" class="nx-anchor-vector">About Infrastructure</a></li>
+                <li><a href="company/careers.html" class="nx-anchor-vector">Talent Vectors</a></li>
+                <li><a href="company/news.html" class="nx-anchor-vector">News &amp; Ledgers</a></li>
+                <li><a href="company/partners.html" class="nx-anchor-vector">Institutional Partners</a></li>
+                <li><a href="company/sustainability.html" class="nx-anchor-vector">Green Velocity</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Support Exchange</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="track.html" class="nx-anchor-vector">Terminal Telemetry</a></li>
+                <li><a href="quote.html" class="nx-anchor-vector">Provision Instance Quote</a></li>
+                <li><a href="help.html" class="nx-anchor-vector">Control Center Hub</a></li>
+                <li><a href="contact.html" class="nx-anchor-vector">Contact Systems Engineers</a></li>
+                <li><a href="faqs.html" class="nx-anchor-vector">Protocol FAQs</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-subscribe-col">
+            <h4 class="nx-footer-title-label">Stay Updated</h4>
+            <p class="nx-subscribe-caption">Subscribe to our secure distribution ledger for real-time routing optimization releases and protocol updates.</p>
+            <form class="nx-subscribe-console" onsubmit="event.preventDefault();">
+                <div class="nx-input-envelope">
+                    <i class='bx bx-user-voice nx-input-micro-icon'></i>
+                    <input type="email" placeholder="Enter operational email" required class="nx-form-field-input">
+                </div>
+                <button type="submit" class="nx-subscribe-action-btn">
+                    <span>Subscribe</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="nx-footer-bottom-bar">
+        <div class="nx-bottom-wrapper">
+            <p class="nx-copyright-text">&copy; 2026 Nexuist Logistics System. All rights reserved.</p>
+            
+            <div class="nx-legal-anchors-row">
+                <a href="legal/privacy.html" class="nx-legal-anchor-node">Privacy Protocol</a>
+                <span class="nx-legal-bullet">&bull;</span>
+                <a href="legal/terms.html" class="nx-legal-anchor-node">Terms of Service Map</a>
+            </div>
+
+            <div class="nx-social-tokens-row">
+                <a href="#" aria-label="Facebook Link" class="nx-social-bubble-anchor"><i class='bx bxl-facebook'></i></a>
+                <a href="#" aria-label="Twitter Link" class="nx-social-bubble-anchor"><i class='bx bxl-twitter'></i></a>
+                <a href="#" aria-label="LinkedIn Link" class="nx-social-bubble-anchor"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" aria-label="Instagram Link" class="nx-social-bubble-anchor"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer section starts here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="nx-global-translator" id="nxTranslator">
+        <button class="nx-trans-trigger" aria-label="Switch Language">
+            <span class="nx-active-flag">🇺🇸</span>
+            <span class="nx-active-text">English</span>
+            <i class='bx bx-chevron-up'></i>
+        </button>
+
+        <div class="nx-trans-menu">
+            <div class="nx-trans-search">
+                <i class='bx bx-search'></i>
+                <input type="text" id="nxLangSearch" placeholder="Search language...">
+            </div>
+            <ul id="nxContainer"></ul>
+        </div>
+    </div>
+
+
+
+    <div id="google_core_translate_widget" style="display: none;"></div>
+
+    <script type="text/javascript">
+        window.googleTranslateReady = false;
+
+        function googleTranslateElementInit() {
+            try {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                }, 'google_core_translate_widget');
+                window.googleTranslateReady = true;
+                console.log('Google Translate initialized successfully');
+            } catch (e) {
+                console.error('Google Translate init error:', e);
+                setTimeout(googleTranslateElementInit, 1000);
+            }
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="assets/js/script.js"></script>
+
+
+
+</body>
+
+</html>
