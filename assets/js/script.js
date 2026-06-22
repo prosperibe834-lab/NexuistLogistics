@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+ 
+ 
     // ==========================================
     // 4. TRANSLATION DATA & INTERCEPT PIPELINE
     // ==========================================
@@ -201,132 +203,107 @@ document.addEventListener("DOMContentLoaded", () => {
         { code: 'zu', name: 'isiZulu', flag: '🇿🇦' }
     ];
 
-    const wrapper = document.getElementById("nxTranslator");
-    const triggerBtn = wrapper.querySelector(".nx-trans-trigger");
-    const activeFlag = wrapper.querySelector(".nx-active-flag");
-    const activeText = wrapper.querySelector(".nx-active-text");
-    const listContainer = document.getElementById("nxContainer");
-    const searchBar = document.getElementById("nxLangSearch");
+   const wrapper = document.getElementById("nxTranslator");
+const triggerBtn = wrapper.querySelector(".nx-trans-trigger");
+const activeFlag = wrapper.querySelector(".nx-active-flag");
+const activeText = wrapper.querySelector(".nx-active-text");
+const listContainer = document.getElementById("nxContainer");
+const searchBar = document.getElementById("nxLangSearch");
 
-    triggerBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        wrapper.classList.toggle("open");
-        if (wrapper.classList.contains("open")) searchBar.focus();
-    });
-
-    document.addEventListener("click", () => wrapper.classList.remove("open"));
-
-    function buildDropdown(items) {
-        listContainer.innerHTML = "";
-        items.forEach(item => {
-            const row = document.createElement("li");
-            row.innerHTML = `<span class="opt-flag">${item.flag}</span> <span class="opt-name">${item.name}</span>`;
-            row.addEventListener("click", () => handleTranslation(item));
-            listContainer.appendChild(row);
-        });
-    }
-
-    function handleTranslation(item) {
-        activeFlag.textContent = item.flag;
-        activeText.textContent = item.name;
-        wrapper.classList.remove("open");
-
-        // Use Google Translate's translate method
-        if (item.code === 'en') {
-            // Reset to English
-            location.reload();
-        } else {
-            // Use google's translate API to perform the translation
-            function performTranslation() {
-                try {
-                    // Look for all possible Google Translate elements
-                    const gteFrame = document.querySelector('iframe[src*="translate_a"]');
-                    const gteCombo = document.querySelector('.goog-te-combo');
-                    
-                    // Try to access combo through different methods
-                    let combo = null;
-                    
-                    // Method 1: Direct querySelector
-                    combo = document.querySelector('.goog-te-combo');
-                    
-                    // Method 2: Try finding through parent div
-                    if (!combo) {
-                        const goolgeTranslateWrapper = document.querySelector('.goog-te-gadget-simple');
-                        if (goolgeTranslateWrapper) {
-                            combo = goolgeTranslateWrapper.querySelector('select');
-                        }
-                    }
-                    
-                    // Method 3: Find through body classes (sometimes Google Translate modifies body)
-                    if (!combo) {
-                        const allSelects = document.querySelectorAll('select');
-                        for (let select of allSelects) {
-                            if (select.className.includes('goog')) {
-                                combo = select;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (combo) {
-                        // Found the combo, now change language
-                        combo.value = item.code;
-                        combo.dispatchEvent(new Event('change', { bubbles: true }));
-                        // Trigger additional events
-                        setTimeout(() => {
-                            combo.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
-                            combo.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
-                            combo.dispatchEvent(new Event('input', { bubbles: true }));
-                        }, 100);
-                        return true;
-                    }
-                    
-                    return false;
-                } catch (e) {
-                    console.error('Translation error:', e);
-                    return false;
-                }
-            }
-
-            // Try to perform translation, with retries
-            let attempts = 0;
-            const maxAttempts = 15;
-            const retryTranslation = () => {
-                if (performTranslation() || attempts >= maxAttempts) {
-                    if (attempts >= maxAttempts) {
-                        // Fallback: try using Google's built-in translation method if available
-                        try {
-                            if (window.google && window.google.translate) {
-                                // Reload with language parameter in URL
-                                const currentUrl = window.location.href;
-                                if (currentUrl.includes('?')) {
-                                    window.location.href = currentUrl + '&google_translate=' + item.code;
-                                } else {
-                                    window.location.href = currentUrl + '?google_translate=' + item.code;
-                                }
-                            }
-                        } catch (e) {
-                            console.error('Fallback translation failed:', e);
-                        }
-                    }
-                    return;
-                }
-                attempts++;
-                setTimeout(retryTranslation, 400);
-            };
-            
-            retryTranslation();
-        }
-    }
-
-    searchBar.addEventListener("input", (e) => {
-        const value = e.target.value.toLowerCase();
-        const output = languageMap.filter(lang => lang.name.toLowerCase().includes(value));
-        buildDropdown(output);
-    });
-
-    buildDropdown(languageMap);
+triggerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    wrapper.classList.toggle("open");
 });
+
+document.addEventListener("click", () => {
+    wrapper.classList.remove("open");
+});
+
+function setLanguage(langCode) {
+
+    localStorage.setItem("selectedLanguage", langCode);
+
+    document.cookie =
+        "googtrans=/en/" + langCode +
+        "; path=/";
+
+    document.cookie =
+        "googtrans=/en/" + langCode +
+        "; domain=" + window.location.hostname +
+        "; path=/";
+
+    location.reload();
+}
+
+function buildDropdown(items) {
+
+    listContainer.innerHTML = "";
+
+    items.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            <span>${item.flag}</span>
+            <span>${item.name}</span>
+        `;
+
+        li.addEventListener("click", () => {
+
+            activeFlag.textContent = item.flag;
+            activeText.textContent = item.name;
+
+            localStorage.setItem(
+                "selectedLanguageName",
+                item.name
+            );
+
+            localStorage.setItem(
+                "selectedLanguageFlag",
+                item.flag
+            );
+
+            setLanguage(item.code);
+
+        });
+
+        listContainer.appendChild(li);
+
+    });
+
+}
+
+searchBar.addEventListener("input", () => {
+
+    const search = searchBar.value.toLowerCase();
+
+    const filtered = languageMap.filter(lang =>
+        lang.name.toLowerCase().includes(search)
+    );
+
+    buildDropdown(filtered);
+
+});
+
+buildDropdown(languageMap);
+
+const savedFlag =
+localStorage.getItem("selectedLanguageFlag");
+
+const savedName =
+localStorage.getItem("selectedLanguageName");
+
+if(savedFlag) {
+    activeFlag.textContent = savedFlag;
+}
+
+if(savedName) {
+    activeText.textContent = savedName;
+}
+
+});
+
+
 
 
 

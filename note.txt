@@ -60,3 +60,38 @@ body.dark-theme {
   box-sizing: border-box;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
 }
+
+
+
+
+
+
+
+
+
+<script>
+const savedLanguage =
+localStorage.getItem("selectedLanguage");
+
+if(savedLanguage){
+
+    document.cookie =
+    "googtrans=/en/" + savedLanguage +
+    "; path=/";
+
+}
+</script>
+
+
+
+iframe.goog-te-banner-frame {
+    display: none !important;
+}
+
+.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}

@@ -1161,47 +1161,50 @@
 
 
 
-    <div class="nx-global-translator" id="nxTranslator">
-        <button class="nx-trans-trigger" aria-label="Switch Language">
-            <span class="nx-active-flag">🇺🇸</span>
-            <span class="nx-active-text">English</span>
-            <i class='bx bx-chevron-up'></i>
-        </button>
+    <div class="nx-global-translator notranslate" translate="no" id="nxTranslator">
 
-        <div class="nx-trans-menu">
-            <div class="nx-trans-search">
-                <i class='bx bx-search'></i>
-                <input type="text" id="nxLangSearch" placeholder="Search language...">
-            </div>
-            <ul id="nxContainer"></ul>
+    <button class="nx-trans-trigger" translate="no">
+        <span class="nx-active-flag notranslate" translate="no">🇺🇸</span>
+        <span class="nx-active-text notranslate" translate="no">English</span>
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
+    <div class="nx-trans-menu notranslate" translate="no">
+
+        <div class="nx-trans-search notranslate" translate="no">
+            <i class='bx bx-search'></i>
+
+            <input
+                type="text"
+                id="nxLangSearch"
+                class="notranslate"
+                translate="no"
+                placeholder="Search language..."
+                autocomplete="off"
+            >
         </div>
+
+        <ul id="nxContainer" class="notranslate" translate="no"></ul>
+
     </div>
 
+</div>
 
+<div id="google_translate_element" style="display:none"></div>
 
-    <div id="google_core_translate_widget" style="display: none;"></div>
-
-    <script type="text/javascript">
-        window.googleTranslateReady = false;
-
+   
+    <script>
         function googleTranslateElementInit() {
-            try {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
-                }, 'google_core_translate_widget');
-                window.googleTranslateReady = true;
-                console.log('Google Translate initialized successfully');
-            } catch (e) {
-                console.error('Google Translate init error:', e);
-                setTimeout(googleTranslateElementInit, 1000);
-            }
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
     </script>
 
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
     <script src="assets/js/script.js"></script>
 
 
