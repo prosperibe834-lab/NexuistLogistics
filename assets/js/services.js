@@ -71,3 +71,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+// Main section starts here
+/* ==========================================================================
+   NEXUIST LOGISTICS SERVICES PROCESSING RUNTIME ENGINE
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeRateCalculationMatrix();
+    initializeInteractiveCardClickFeedback();
+});
+
+function initializeRateCalculationMatrix() {
+    const serviceSelector = document.getElementById('calcServiceType');
+    const weightInput = document.getElementById('calcWeight');
+    const resultDisplay = document.getElementById('calcTotalValue');
+
+    if (!serviceSelector || !weightInput || !resultDisplay) return;
+
+    // Execution routine to process math metrics
+    const executeRecalculation = () => {
+        const selectedOption = serviceSelector.options[serviceSelector.selectedIndex];
+        const baseRate = parseFloat(selectedOption.getAttribute('data-rate')) || 0;
+        const enteredWeight = parseFloat(weightInput.value) || 0;
+
+        // Base rate equation
+        const computedAllocation = baseRate * enteredWeight;
+
+        // High precision animated value rendering transition
+        animateFinancialValueOutput(parseFloat(resultDisplay.innerText) || 0, computedAllocation, resultDisplay);
+    };
+
+    // Bind event matrix structures
+    serviceSelector.addEventListener('change', executeRecalculation);
+    weightInput.addEventListener('input', executeRecalculation);
+
+    // Initial load compilation sequence
+    executeRecalculation();
+}
+
+/**
+ * High frequency visual value stepper animation
+ */
+function animateFinancialValueOutput(start, end, element) {
+    const duration = 250; // Milliseconds allocation space
+    const startTime = performance.now();
+
+    const frameStep = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progression = Math.min(elapsed / duration, 1);
+        
+        // Linear ease progression mapping
+        const currentFrameValue = start + (end - start) * progression;
+        element.innerText = currentFrameValue.toFixed(2);
+
+        if (progression < 1) {
+            requestAnimationFrame(frameStep);
+        }
+    };
+
+    requestAnimationFrame(frameStep);
+}
+
+function initializeInteractiveCardClickFeedback() {
+    const cards = document.querySelectorAll('.nl-service-card');
+    const serviceSelector = document.getElementById('calcServiceType');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const TargetServiceKey = card.getAttribute('data-service');
+            if (serviceSelector && TargetServiceKey) {
+                // Focus synchronization mapping
+                serviceSelector.value = TargetServiceKey;
+                serviceSelector.dispatchEvent(new Event('change'));
+                
+                // Visual confirmation scroll target execution
+                serviceSelector.closest('.nl-calculator-wrapper').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    });
+}
+
+// Main section ends here

@@ -22,7 +22,7 @@ if(savedLanguage){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/qoute.css">
+    <link rel="stylesheet" href="assets/css/quote.css">
 </head>
 
 <body>
@@ -95,6 +95,290 @@ if(savedLanguage){
             </div>
         </nav>
     </header>
+    
+    <!-- Main Section starts here -->
+
+    <!-- NEXUIST LOGISTICS QUOTE GENERATION ENGINE -->
+<div class="nl-quote-viewport">
+
+    <!-- QUOTE ENGINE HERO HEADER -->
+    <div class="nl-quote-hero animate-fade-in">
+        <span class="quote-badge"><i class="bx bx-calculator"></i> Real-Time Quote Engine</span>
+        <h1>Request an Enterprise Allocation Quote</h1>
+        <p>Input your parameters into our synchronized routing ledger to calculate instant rates and clear institutional routing pathways.</p>
+    </div>
+
+    <!-- MAIN MULTI-STEP QUOTE PLATFORM GRID -->
+    <div class="nl-quote-grid">
+        
+        <!-- FORM ARCHITECTURE PANEL (LEFT) -->
+        <form id="quoteEngineForm" class="nl-quote-form glass-panel animate-slide-up" onsubmit="event.preventDefault();">
+            
+            <!-- SECTION 1: ROUTING VECHICLE PARAMETERS -->
+            <div class="form-section-block">
+                <div class="section-indicator">
+                    <span class="step-num">01</span>
+                    <h3>Routing Vector & Logistics Tier</h3>
+                </div>
+                
+                <div class="form-input-row">
+                    <div class="calc-input-group">
+                        <label for="quoteLogisticsVector">Logistics Mode</label>
+                        <div class="calc-field-shell">
+                            <i class="bx bx-shuffle field-icon"></i>
+                            <select id="quoteLogisticsVector" required>
+                                <option value="air" data-base="75" data-per-kg="15">Global Air Priority</option>
+                                <option value="ocean" data-base="180" data-per-kg="4.5">Ocean Cargo Lines</option>
+                                <option value="clearing" data-base="120" data-per-kg="8">Customs Brokerage Matrix</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: PHYSICAL CARGO MATRICES -->
+            <div class="form-section-block">
+                <div class="section-indicator">
+                    <span class="step-num">02</span>
+                    <h3>Cargo Mass & Dimensional Data</h3>
+                </div>
+                
+                <div class="form-input-grid-three">
+                    <div class="calc-input-group">
+                        <label for="quoteWeight">Total Weight (kg)</label>
+                        <div class="calc-field-shell">
+                            <i class="bx bx-unite"></i>
+                            <input type="number" id="quoteWeight" value="10" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="calc-input-group">
+                        <label for="quoteVolume">Est. Volume (CBM)</label>
+                        <div class="calc-field-shell">
+                            <i class="bx bx-cube"></i>
+                            <input type="number" id="quoteVolume" value="1" min="0.1" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="calc-input-group">
+                        <label for="quoteInsurance">Cargo Valuation Insurance</label>
+                        <div class="calc-field-shell">
+                            <i class="bx bx-shield-quarter"></i>
+                            <select id="quoteInsurance">
+                                <option value="standard" data-fee="15">Standard Protection</option>
+                                <option value="premium" data-fee="75">Premium Tier Escrow Bond</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: TRANSACTION TERMINAL LOCATIONS -->
+            <div class="form-section-block">
+                <div class="section-indicator">
+                    <span class="step-num">03</span>
+                    <h3>Origin & Terminal Destination</h3>
+                </div>
+                
+                <div class="form-input-grid-two">
+                    <div class="calc-input-group">
+                        <label for="quoteOrigin">Origin Port Country</label>
+                        <div class="calc-field-shell">
+                            <i class="bx bx-map-pin"></i>
+                            <input type="text" id="quoteOrigin" placeholder="e.g., China, United Kingdom" required>
+                        </div>
+                    </div>
+
+                    <div class="calc-input-group">
+                        <label for="quoteDestination">Destination Complex</label>
+                        <div class="calc-field-shell">
+                            <i class="bx bx-navigation"></i>
+                            <input type="text" id="quoteDestination" placeholder="e.g., Texas port, Orlegon Terminal" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="quote-submit-btn">
+                <span>Compile System Valuation</span>
+                <i class="bx bx-right-arrow-alt"></i>
+            </button>
+        </form>
+
+        <!-- DYNAMIC SUMMARY LEDGER BLOCK (RIGHT) -->
+        <div class="nl-quote-summary-panel glass-panel animate-slide-up" style="animation-delay: 0.15s;">
+            <div class="summary-header">
+                <h3>Allocation Invoice Ledger</h3>
+                <span class="live-tag-status"><i class="bx bx-pulse"></i> Calculation Real-Time</span>
+            </div>
+
+            <!-- LEDGER BILL ITEMS -->
+            <div class="ledger-breakdown">
+                <div class="ledger-row">
+                    <span class="ledger-label">Base Pipeline Handling Fee</span>
+                    <span class="ledger-value" id="ledgerBase">$0.00</span>
+                </div>
+                <div class="ledger-row">
+                    <span class="ledger-label">Cargo Mass Weight Surcharge</span>
+                    <span class="ledger-value" id="ledgerWeight">$0.00</span>
+                </div>
+                <div class="ledger-row">
+                    <span class="ledger-label">Dimensional Volume Surcharge</span>
+                    <span class="ledger-value" id="ledgerVolume">$0.00</span>
+                </div>
+                <div class="ledger-row">
+                    <span class="ledger-label">Compliance Insurance Security</span>
+                    <span class="ledger-value" id="ledgerInsurance">$0.00</span>
+                </div>
+
+                <div class="ledger-divider"></div>
+
+                <!-- GRAND TOTAL DISPLAY WINDOW -->
+                <div class="ledger-grand-total">
+                    <div class="total-meta">
+                        <span class="total-label">Total Estimated Quote Allocation</span>
+                        <p class="total-subtext">Subject to terminal duty reviews</p>
+                    </div>
+                    <div class="total-numeric-wrap">
+                        <span class="total-currency">$</span><span id="ledgerGrandTotal">0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VALUE TRUST PROPOSITION SECTION -->
+            <div class="summary-trust-footer">
+                <div class="trust-node">
+                    <i class="bx bx-time-five status-delivered-icon"></i>
+                    <p>Quotes remain locked and guaranteed for 72 systemic hours.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Main section ends here -->
+
+<!-- Footer section starts here -->
+
+<footer class="nx-vip-footer">
+    <div class="nx-footer-grid-mesh"></div>
+
+    <div class="nx-footer-container">
+        
+        <div class="nx-footer-brand-col">
+            <a href="index.html" class="nx-footer-logo-wrap">
+                <div class="nx-footer-logo-icon">
+                    <i class='bx bx-navigation'></i>
+                </div>
+                <span class="nx-footer-logo-text">NEXUIST<span class="logo-sub">LOGISTICS</span></span>
+            </a>
+            <p class="nx-footer-brand-desc">
+                High-frequency sovereign distribution networks and real-time ledger tracking loops engineered for modern asset velocity.
+            </p>
+            <div class="nx-footer-contact-matrix">
+                <a href="mailto:operations@nexuist.com" class="nx-contact-link-node">
+                    <i class='bx bx-envelope'></i>
+                    <span>operations@nexuist.com</span>
+                </a>
+                <a href="tel:+1233323383" class="nx-contact-link-node">
+                    <i class='bx bx-phone-call'></i>
+                    <span>+1 (233) 323-383</span>
+                </a>
+                <div class="nx-contact-link-node text-node">
+                    <i class='bx bx-map-pin'></i>
+                    <span>12 N Broadway Street, Middletown, DE, US</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Services Infrastructure</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="domestic.html" class="nx-anchor-vector">Domestic Shipping</a></li>
+                <li><a href="international.html" class="nx-anchor-vector">International Freight</a></li>
+                <li><a href="air-cargo.html" class="nx-anchor-vector">Air Cargo Routing</a></li>
+                <li><a href="ocean-freight.html" class="nx-anchor-vector">Maritime Mesh Lines</a></li>
+                <li><a href="fulfillment.html" class="nx-anchor-vector">Smart Warehousing</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Company Structure</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="about.html" class="nx-anchor-vector">About Infrastructure</a></li>
+                <li><a href="careers.html" class="nx-anchor-vector">Talent Vectors</a></li>
+                <li><a href="news.html" class="nx-anchor-vector">News &amp; Ledgers</a></li>
+                <li><a href="partners.html" class="nx-anchor-vector">Institutional Partners</a></li>
+                <li><a href="sustainability.html" class="nx-anchor-vector">Green Velocity</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Support Exchange</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="track.html" class="nx-anchor-vector">Terminal Telemetry</a></li>
+                <li><a href="quote.html" class="nx-anchor-vector">Provision Instance Quote</a></li>
+                <li><a href="help.html" class="nx-anchor-vector">Control Center Hub</a></li>
+                <li><a href="contact.html" class="nx-anchor-vector">Contact Systems Engineers</a></li>
+                <li><a href="faqs.html" class="nx-anchor-vector">Protocol FAQs</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-subscribe-col">
+            <h4 class="nx-footer-title-label">Stay Updated</h4>
+            <p class="nx-subscribe-caption">Subscribe to our secure distribution ledger for real-time routing optimization releases and protocol updates.</p>
+            <form class="nx-subscribe-console" onsubmit="event.preventDefault();">
+                <div class="nx-input-envelope">
+                    <i class='bx bx-user-voice nx-input-micro-icon'></i>
+                    <input type="email" placeholder="Enter operational email" required class="nx-form-field-input">
+                </div>
+                <button type="submit" class="nx-subscribe-action-btn">
+                    <span>Subscribe</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="nx-footer-bottom-bar">
+        <div class="nx-bottom-wrapper">
+            <p class="nx-copyright-text">&copy; 2026 Nexuist Logistics System. All rights reserved.</p>
+            
+            <div class="nx-legal-anchors-row">
+                <a href="privacy.html" class="nx-legal-anchor-node">Privacy Protocol</a>
+                <span class="nx-legal-bullet">&bull;</span>
+                <a href="terms.html" class="nx-legal-anchor-node">Terms of Service Map</a>
+            </div>
+
+            <div class="nx-social-tokens-row">
+                <a href="#" aria-label="Facebook Link" class="nx-social-bubble-anchor"><i class='bx bxl-facebook'></i></a>
+                <a href="#" aria-label="Twitter Link" class="nx-social-bubble-anchor"><i class='bx bxl-twitter'></i></a>
+                <a href="#" aria-label="LinkedIn Link" class="nx-social-bubble-anchor"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" aria-label="Instagram Link" class="nx-social-bubble-anchor"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer section starts here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="google_translate_element" style="display:none"></div>
 
 <script>

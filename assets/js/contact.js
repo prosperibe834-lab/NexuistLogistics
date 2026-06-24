@@ -71,3 +71,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+// Main section starts here
+
+/* ==========================================================================
+   NEXUIST LOGISTICS INTERACTIVE CONTACT RUNTIME PIPELINE
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSecureContactFormPipeline();
+});
+
+function initializeSecureContactFormPipeline() {
+    const form = document.getElementById('nexuistContactForm');
+    const successModal = document.getElementById('successModal');
+    
+    if (!form || !successModal) return;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Stop standard HTTP document refresh mutations
+
+        // Extract Input Reference Nodes
+        const nameInput = document.getElementById('nlName');
+        const emailInput = document.getElementById('nlEmail');
+        const messageInput = document.getElementById('nlMessage');
+
+        let formsAreValid = true;
+
+        // Reset previous focus shells
+        [nameInput, emailInput, messageInput].forEach(input => {
+            if(input) input.closest('.input-shell').style.borderColor = '';
+        });
+
+        // Basic Client-Side Native Valuations
+        if (!nameInput.value.trim()) {
+            markInputAsInvalid(nameInput);
+            formsAreValid = false;
+        }
+        if (!validateEmailFormatPattern(emailInput.value.trim())) {
+            markInputAsInvalid(emailInput);
+            formsAreValid = false;
+        }
+        if (!messageInput.value.trim()) {
+            markInputAsInvalid(messageInput);
+            formsAreValid = false;
+        }
+
+        if (!formsAreValid) return; // Halt script execution space if validation conditions fail
+
+        // Button state processing animation simulation
+        const submitBtn = document.getElementById('nlSubmitBtn');
+        const fallbackText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class='bx bx-loader-alt bx-spin'></i> <span>Encrypting Transmission...</span>`;
+
+        setTimeout(() => {
+            // Trigger Modal UI Pipeline state change after emulated API response latency
+            successModal.classList.add('active');
+            
+            // Clear application memory state and form elements
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = fallbackText;
+        }, 1200);
+    });
+
+    // Handle internal escape routing keys out of modal
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && successModal.classList.contains('active')) {
+            closeSuccessVerificationModal();
+        }
+    });
+}
+
+function markInputAsInvalid(element) {
+    if(!element) return;
+    const parentShell = element.closest('.input-shell');
+    if(parentShell) {
+        parentShell.style.borderColor = 'var(--status-failed)';
+        element.focus();
+    }
+}
+
+function validateEmailFormatPattern(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+}
+
+window.closeSuccessVerificationModal = function() {
+    const successModal = document.getElementById('successModal');
+    if(successModal) {
+        successModal.classList.remove('active');
+    }
+};
+
+// Main section ends here

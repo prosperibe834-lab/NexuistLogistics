@@ -393,3 +393,714 @@ iframe.goog-te-banner-frame {
 body {
     top: 0px !important;
 }
+
+
+
+/* Footer section starts here */
+
+/* ==========================================
+   LEGENDARY VIP FINTECH FOOTER ARCHITECTURE
+   ========================================== */
+.nx-vip-footer {
+  width: 100%;
+  padding: 100px 0 0 0;
+  background: var(--brand-gradient-dark);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--dark-border);
+}
+
+/* Optional Light Mode Adaptation Security Handler if framework demands it */
+body:not(.dark-theme) .nx-vip-footer {
+  background: linear-gradient(145deg, #0f172a 0%, #020617 100%);
+  border-top: 1px solid var(--light-border);
+}
+
+/* Subtle Technical Matrix Overlay Lines */
+.nx-footer-grid-mesh {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* The Core Flexible 5-Column Distribution Grid */
+.nx-footer-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 80px 24px;
+  display: grid;
+  grid-template-columns: 1.3fr repeat(3, 0.7fr) 1.2fr;
+  gap: 48px;
+  z-index: 5;
+}
+
+/* Corporate Brand Column Styling Parameters */
+.nx-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nx-footer-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nx-footer-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--brand-gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+}
+
+.nx-footer-logo-icon i {
+  color: #040814;
+  font-size: 1.25rem;
+}
+
+.nx-footer-logo-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nx-footer-logo-text .logo-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--dark-primary);
+  margin-top: 3px;
+}
+
+.nx-footer-brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--dark-text-muted);
+  max-width: 320px;
+}
+
+.nx-footer-contact-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.nx-contact-link-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--dark-text-muted);
+  transition: color 0.3s ease;
+}
+
+.nx-contact-link-node i {
+  font-size: 1.1rem;
+  color: var(--dark-primary);
+}
+
+.nx-contact-link-node:not(.text-node):hover {
+  color: #ffffff;
+}
+
+/* Standard Secondary Internal Column Header Text Labels */
+.nx-footer-title-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.nx-footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* VIP Interactive Micro Link Sliding Anchors */
+.nx-anchor-vector {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark-text-muted);
+  display: inline-flex;
+  position: relative;
+  padding: 2px 0;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-anchor-vector::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--brand-gradient-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-anchor-vector:hover {
+  color: #ffffff;
+}
+
+.nx-anchor-vector:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ==========================================
+   NEWSLETTER TELEMETRY CAPTURE INPUT LAYOUTS
+   ========================================== */
+.nx-footer-subscribe-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nx-subscribe-caption {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--dark-text-muted);
+}
+
+.nx-subscribe-console {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.nx-input-envelope {
+  position: relative;
+  width: 100%;
+}
+
+.nx-input-micro-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.15rem;
+  color: var(--dark-text-ghost);
+}
+
+.nx-form-field-input {
+  width: 100%;
+  height: 48px;
+  background: rgba(15, 26, 48, 0.45);
+  border: 1px solid var(--dark-border);
+  border-radius: 12px;
+  padding: 0 16px 0 44px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.nx-form-field-input::placeholder {
+  color: var(--dark-text-ghost);
+}
+
+.nx-form-field-input:focus {
+  border-color: rgba(0, 242, 254, 0.4);
+  background: rgba(15, 26, 48, 0.8);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.08);
+}
+
+/* High-Converting Action Dispatch Button */
+.nx-subscribe-action-btn {
+  width: 100%;
+  height: 46px;
+  background: var(--brand-gradient-primary);
+  border: none;
+  border-radius: 12px;
+  color: #040814;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nx-subscribe-action-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nx-subscribe-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.45);
+}
+
+.nx-subscribe-action-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   BOTTOM FOOTER LEGALS ROW COMPONENT MODALS
+   ========================================== */
+.nx-footer-bottom-bar {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+.nx-bottom-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nx-copyright-text {
+  font-size: 0.825rem;
+  color: var(--dark-text-ghost);
+}
+
+.nx-legal-anchors-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nx-legal-anchor-node {
+  text-decoration: none;
+  font-size: 0.825rem;
+  color: var(--dark-text-ghost);
+  transition: color 0.2s ease;
+}
+
+.nx-legal-anchor-node:hover {
+  color: var(--dark-primary);
+}
+
+.nx-legal-bullet {
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+}
+
+/* Neomorphic Social Container Links Row */
+.nx-social-tokens-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nx-social-bubble-anchor {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-text-muted);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nx-social-bubble-anchor:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 242, 254, 0.3);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   STRICT ADAPTIVE CELL RESPONSIVITY PATTERNS
+   ========================================== */
+@media (max-width: 1120px) {
+  .nx-footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .nx-footer-brand-col, .nx-footer-subscribe-col {
+    grid-column: span 2;
+  }
+  .nx-footer-brand-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nx-footer-container {
+    grid-template-columns: 1fr; /* Rigid stack protection layout architecture */
+    gap: 36px;
+  }
+  .nx-footer-brand-col, .nx-footer-subscribe-col {
+    grid-column: span 1;
+  }
+  .nx-bottom-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .nx-legal-anchors-row {
+    justify-content: center;
+  }
+  .nx-social-tokens-row {
+    justify-content: center;
+  }
+}
+
+/* Footer section ends here */
+
+
+/* Main section starts here */
+
+/* ==========================================================================
+   NEXUIST LOGISTICS QUOTE ENGINE ARCHITECTURE STYLING
+   ========================================================================== */
+
+/* --- 1. VIEWPORT LAYOUT WRAPPER --- */
+.nl-quote-viewport {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Lock viewport strictly from running sideways on mobile */
+}
+
+/* Glass Optimization Protocols */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--light-border);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+}
+body.dark-theme .glass-panel {
+    background: rgba(15, 26, 48, 0.45);
+    border-color: var(--dark-border);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* --- 2. HERO COMPONENT STYLES --- */
+.nl-quote-hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.quote-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--brand-gradient-primary);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+}
+
+.nl-quote-hero h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -0.75px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+body.dark-theme .nl-quote-hero h1 { color: var(--dark-text-main); }
+
+.nl-quote-hero p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--light-text-muted);
+}
+body.dark-theme .nl-quote-hero p { color: var(--dark-text-muted); }
+
+/* --- 3. RESPONSIVE GRID CONFIGURATION --- */
+.nl-quote-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+    width: 100%;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .nl-quote-grid {
+        grid-template-columns: 1fr; /* Switch to stack structure cleanly on smaller displays */
+    }
+}
+
+/* --- 4. FORM SEGMENT ARCHITECTURE --- */
+.nl-quote-form {
+    background: var(--light-bg-card);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+body.dark-theme .nl-quote-form { background: var(--dark-bg-card); }
+
+.form-section-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--light-border);
+    padding-bottom: 10px;
+}
+body.dark-theme .section-indicator { border-color: var(--dark-border); }
+
+.step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--light-primary);
+    background: rgba(2, 132, 199, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+body.dark-theme .step-num { color: var(--dark-primary); background: rgba(56, 189, 248, 0.1); }
+
+.section-indicator h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+}
+
+/* Layout matrices for input containers */
+.form-input-row { width: 100%; }
+.form-input-grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-input-grid-three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+@media (max-width: 600px) {
+    .form-input-grid-two, .form-input-grid-three {
+        grid-template-columns: 1fr; /* Dynamic mobile folding configuration rule */
+    }
+    .nl-quote-form { padding: 24px 16px; }
+    .nl-quote-hero h1 { font-size: 1.8rem; }
+}
+
+.calc-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.calc-input-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--light-text-muted);
+    text-transform: uppercase;
+}
+body.dark-theme .calc-input-group label { color: var(--dark-text-muted); }
+
+.calc-field-shell {
+    display: flex;
+    align-items: center;
+    background: var(--light-bg-hover);
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    padding: 0 14px;
+}
+body.dark-theme .calc-field-shell {
+    background: var(--dark-bg-hover);
+    border-color: var(--dark-border);
+}
+
+/* Tracking Input Focus States */
+.calc-field-shell:focus-within {
+    border-color: var(--light-primary);
+}
+body.dark-theme .calc-field-shell:focus-within {
+    border-color: var(--dark-primary);
+}
+
+.calc-field-shell i {
+    color: var(--light-text-ghost);
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+body.dark-theme .calc-field-shell i { color: var(--dark-text-ghost); }
+
+.calc-field-shell select, .calc-field-shell input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--light-text-main);
+    padding: 12px 0;
+    font-size: 0.85rem;
+    width: 100%;
+}
+body.dark-theme .calc-field-shell select, body.dark-theme .calc-field-shell input { color: var(--dark-text-main); }
+
+/* Submit Action Matrix Trigger Button */
+.quote-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--brand-gradient-primary);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(0, 242, 254, 0.2);
+}
+
+.quote-submit-btn:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+/* --- 5. LEDGER BILL DISPLAY DESIGN --- */
+.nl-quote-summary-panel {
+    background: var(--light-bg-card);
+    padding: 32px;
+    position: sticky;
+    top: 24px; /* Fixed anchor when pulling layout stream downwards on desktops */
+}
+body.dark-theme .nl-quote-summary-panel { background: var(--dark-bg-card); }
+
+@media (max-width: 992px) {
+    .nl-quote-summary-panel { position: relative; top: 0; padding: 24px 16px; }
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 8px;
+}
+
+.summary-header h3 { font-size: 1.15rem; font-weight: 700; }
+
+.live-tag-status {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--status-delivered);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ledger-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.ledger-label { color: var(--light-text-muted); }
+body.dark-theme .ledger-label { color: var(--dark-text-muted); }
+.ledger-value { font-weight: 600; color: var(--light-text-main); }
+body.dark-theme .ledger-value { color: var(--dark-text-main); }
+
+.ledger-divider {
+    height: 1px;
+    background: var(--light-border);
+    margin: 8px 0;
+}
+body.dark-theme .ledger-divider { border-color: var(--dark-border); background: var(--dark-border); }
+
+/* Grand Total Dynamic Box Layout */
+.ledger-grand-total {
+    background: var(--brand-gradient-dark);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.04);
+    gap: 12px;
+}
+
+.total-meta { display: flex; flex-direction: column; }
+.total-label { font-size: 0.72rem; text-transform: uppercase; color: var(--dark-text-muted); font-weight: 600; }
+.total-subtext { font-size: 0.65rem; color: var(--dark-text-ghost); margin-top: 2px; }
+
+.total-numeric-wrap {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.total-currency { color: var(--dark-accent); margin-right: 1px; }
+
+/* Summary Trust verification footer */
+.summary-trust-footer { margin-top: 24px; padding-top: 18px; border-top: 1px dashed var(--light-border); }
+body.dark-theme .summary-trust-footer { border-color: var(--dark-border); }
+
+.trust-node { display: flex; gap: 8px; align-items: center; }
+.trust-node p { font-size: 0.75rem; color: var(--light-text-muted); line-height: 1.4; }
+body.dark-theme .trust-node p { color: var(--dark-text-muted); }
+.status-delivered-icon { color: var(--status-delivered); font-size: 1.1rem; }
+
+/* --- 6. MICRO-ANIMATIONS LAYERS --- */
+.animate-fade-in { animation: qFIn 0.5s ease forwards; }
+.animate-slide-up { opacity: 0; animation: qSUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes qFIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes qSUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Main section ends here */

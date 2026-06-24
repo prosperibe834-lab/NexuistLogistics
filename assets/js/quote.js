@@ -71,3 +71,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+// Main section starts here
+
+/* ==========================================================================
+   NEXUIST MULTI-STEP QUOTE CALCULATOR CONTROLLER ENGINE
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeQuoteCalculationCore();
+});
+
+function initializeQuoteCalculationCore() {
+    const form = document.getElementById('quoteEngineForm');
+    if (!form) return;
+
+    // Interface extraction mappings
+    const vectorSelector = document.getElementById('quoteLogisticsVector');
+    const weightInput = document.getElementById('quoteWeight');
+    const volumeInput = document.getElementById('quoteVolume');
+    const insuranceSelector = document.getElementById('quoteInsurance');
+
+    // Outlet display elements
+    const outBase = document.getElementById('ledgerBase');
+    const outWeight = document.getElementById('ledgerWeight');
+    const outVolume = document.getElementById('ledgerVolume');
+    const outInsurance = document.getElementById('ledgerInsurance');
+    const outGrandTotal = document.getElementById('ledgerGrandTotal');
+
+    const recalculateInvoiceStatement = () => {
+        // Step 1: Read Option Core Data Metrics
+        const selectedVector = vectorSelector.options[vectorSelector.selectedIndex];
+        const basePipelineFee = parseFloat(selectedVector.getAttribute('data-base')) || 0;
+        const weightRateFactor = parseFloat(selectedVector.getAttribute('data-per-kg')) || 0;
+
+        // Step 2: Extract User Inputs
+        const operationalWeight = parseFloat(weightInput.value) || 0;
+        const operationalVolume = parseFloat(volumeInput.value) || 0;
+        
+        const selectedInsurance = insuranceSelector.options[insuranceSelector.selectedIndex];
+        const insuranceFee = parseFloat(selectedInsurance.getAttribute('data-fee')) || 0;
+
+        // Step 3: Compute Matrix Algebra
+        const computedWeightSurcharge = operationalWeight * weightRateFactor;
+        const computedVolumeSurcharge = operationalVolume * 22.5; // Constant volumetric constant matrix allocation
+        
+        const absoluteGrandTotalValue = basePipelineFee + computedWeightSurcharge + computedVolumeSurcharge + insuranceFee;
+
+        // Step 4: Render values smoothly into interface elements
+        outBase.innerText = `$${basePipelineFee.toFixed(2)}`;
+        outWeight.innerText = `$${computedWeightSurcharge.toFixed(2)}`;
+        outVolume.innerText = `$${computedVolumeSurcharge.toFixed(2)}`;
+        outInsurance.innerText = `$${insuranceFee.toFixed(2)}`;
+
+        // High precision step animation for grand total element
+        animateNumericQuoteCounter(parseFloat(outGrandTotal.innerText) || 0, absoluteGrandTotalValue, outGrandTotal);
+    };
+
+    // Bind event tracking matrix
+    const interactionEvents = ['change', 'input'];
+    const dynamicFormElements = [vectorSelector, weightInput, volumeInput, insuranceSelector];
+
+    dynamicFormElements.forEach(element => {
+        if (!element) return;
+        interactionEvents.forEach(evt => element.addEventListener(evt, recalculateInvoiceStatement));
+    });
+
+    // Handle form submit verification logs
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert(`Quote compiled successfully! Operational Allocation Matrix locked.`);
+    });
+
+    // Execute matrix initialization pipeline run
+    recalculateInvoiceStatement();
+}
+
+/**
+ * Visual linear animation stepper for financial totals
+ */
+function animateNumericQuoteCounter(startValue, endValue, targetDisplayElement) {
+    const trackingDuration = 200; // time in milliseconds
+    const trackingStartTime = performance.now();
+
+    const processFrameUpdate = (currentFrameTime) => {
+        const timeElapsed = currentFrameTime - trackingStartTime;
+        const processProgression = Math.min(timeElapsed / trackingDuration, 1);
+        
+        const frameResultStepValue = startValue + (endValue - startValue) * processProgression;
+        targetDisplayElement.innerText = frameResultStepValue.toFixed(2);
+
+        if (processProgression < 1) {
+            requestAnimationFrame(processFrameUpdate);
+        }
+    };
+
+    requestAnimationFrame(processFrameUpdate);
+}
+
+// Main section ends here
