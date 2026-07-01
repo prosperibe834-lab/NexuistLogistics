@@ -72,63 +72,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// Main Section starts here
+// ==========================================================================
+// NEXUIST SMART WAREHOUSE CONFIGURATOR & CLOCK ENGINE
+// ==========================================================================
 
-// Main section starts here
-
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('domesticRateForm');
-  const weightInput = document.getElementById('weight');
-  const serviceType = document.getElementById('serviceType');
-  const priceDisplay = document.getElementById('estimatedPrice');
-  const costEstimator = document.getElementById('costEstimator');
-
-  // Base Calculation Configuration for Nigeria Regions
-  const BASE_RATE = 1500;
-  const PER_KG_RATE = 450;
-
-  function calculateShippingCost() {
-    const weight = parseFloat(weightInput.value) || 0;
-    if (weight === 0) {
-      priceDisplay.textContent = '₦0.00';
-      return;
+function allocateWarehouseNode() {
+    const hub = document.getElementById('warehouseHub').value;
+    const profile = document.getElementById('payloadProfile').value;
+    const duration = document.getElementById('storageDuration').value;
+    
+    const outputBox = document.getElementById('warehouseOutput');
+    
+    if (!hub || !profile) {
+        alert("Please select a target facility hub and freight profile configuration.");
+        return;
     }
 
-    let total = BASE_RATE + (weight * PER_KG_RATE);
+    // Unhide telemetry logs output box
+    outputBox.classList.remove('hidden');
 
-    // Apply Premium speed modifier
-    if (serviceType.value === 'express') {
-      total *= 1.5; 
+    // Financial Calculation Logic
+    let dailyBaseFee = 12.50; // base rate per pallet/slot
+    let profileMultiplier = 1.0;
+    let environmentalTarget = "Standard Controlled Ambient Room";
+
+    if (profile === "electronics") {
+        profileMultiplier = 1.45;
+        environmentalTarget = "High-Security ESD Protected Grid";
+    } else if (profile === "coldchain") {
+        profileMultiplier = 1.75;
+        environmentalTarget = "Precision Deep Chill Zone (-18°C)";
     }
 
-    // Fintech standard currency string formatting
-    const formattedPrice = new Intl.NumberFormat('en-NG', {
-      style: 'currency',
-      currency: 'NGN',
-      minimumFractionDigits: 2
-    }).format(total);
+    // Compile node tracking address hash 
+    const hubCode = hub.split('_')[0];
+    const randomizedCluster = Math.floor(1000 + Math.random() * 9000);
+    const nodeAddress = `NEX-${hubCode}-AISLE_${randomizedCluster}`;
 
-    // Add a quick feedback pop animation
-    costEstimator.classList.add('pulse');
-    priceDisplay.textContent = formattedPrice;
+    // Final math output calculations
+    const localizedSum = (dailyBaseFee * duration * profileMultiplier).toFixed(2);
 
-    setTimeout(() => {
-      costEstimator.classList.remove('pulse');
-    }, 200);
-  }
+    // Write allocations back to the user interface
+    document.getElementById('outNodeAddress').innerText = nodeAddress;
+    document.getElementById('outEnvironment').innerText = environmentalTarget;
+    document.getElementById('outStorageCost').innerText = `$${parseFloat(localizedSum).toLocaleString()}`;
+}
 
-  // Event triggers for live structural estimation changes
-  weightInput.addEventListener('input', calculateShippingCost);
-  serviceType.addEventListener('change', calculateShippingCost);
-
-  // Form submission handler
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const origin = document.getElementById('origin').value;
-    const dest = document.getElementById('destination').value;
-    
-    alert(`⚡ Redirecting to Nexuist Checkout Gateway Secure Layer...\nRouting: ${origin} ➔ ${dest}\nAmount: ${priceDisplay.textContent}`);
-  });
+// Live Time-Sync Frame Simulator inside the pill banner
+document.addEventListener("DOMContentLoaded", () => {
+    const timeSyncLabel = document.getElementById('liveTimeSync');
+    if (timeSyncLabel) {
+        setInterval(() => {
+            const now = new Date();
+            timeSyncLabel.innerText = `SYS_SYNC_OK // ${now.toISOString().replace('T', ' ').substring(0, 19)} UTC`;
+        }, 1000);
+    }
 });
-
-// Main section ends here
+// Main Section ends here

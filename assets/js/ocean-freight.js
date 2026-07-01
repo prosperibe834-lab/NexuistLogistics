@@ -73,62 +73,60 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Main section starts here
+// Main Section starts here
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('domesticRateForm');
-  const weightInput = document.getElementById('weight');
-  const serviceType = document.getElementById('serviceType');
-  const priceDisplay = document.getElementById('estimatedPrice');
-  const costEstimator = document.getElementById('costEstimator');
+// ==========================================================================
+// NEXUIST MARITIME MESH MATRIX CALCULATOR
+// ==========================================================================
 
-  // Base Calculation Configuration for Nigeria Regions
-  const BASE_RATE = 1500;
-  const PER_KG_RATE = 450;
-
-  function calculateShippingCost() {
-    const weight = parseFloat(weightInput.value) || 0;
-    if (weight === 0) {
-      priceDisplay.textContent = '₦0.00';
-      return;
+function calculateOceanRoute() {
+    const origin = document.getElementById('loadingPort').value;
+    const destination = document.getElementById('dischargePort').value;
+    const size = document.getElementById('containerSize').value;
+    
+    const outputBox = document.getElementById('maritimeOutput');
+    
+    if (!origin || !destination) {
+        alert("Please set your loading terminal and destination paths.");
+        return;
     }
 
-    let total = BASE_RATE + (weight * PER_KG_RATE);
+    // Unveil financial breakdown ledger
+    outputBox.classList.remove('hidden');
 
-    // Apply Premium speed modifier
-    if (serviceType.value === 'express') {
-      total *= 1.5; 
+    // Base Multipliers
+    let baseContainerRate = size === "40" ? 1850 : 1100;
+    let distanceDays = 14;
+    let terminalMarkup = 1.0;
+
+    // Calculation Matrix Parsing
+    if (origin === "LOS_APAPA" && destination === "RTM_NL") {
+        distanceDays = 18;
+        terminalMarkup = 1.12;
+    } else if (origin === "LOS_APAPA" && destination === "HAM_DE") {
+        distanceDays = 21;
+        terminalMarkup = 1.18;
+    } else if (origin === "PHC_ONNE" && destination === "RTM_NL") {
+        distanceDays = 20;
+        terminalMarkup = 1.15;
+    } else if (origin === "PHC_ONNE" && destination === "HAM_DE") {
+        distanceDays = 23;
+        terminalMarkup = 1.22;
+    } else {
+        distanceDays = 16;
+        terminalMarkup = 1.08;
     }
 
-    // Fintech standard currency string formatting
-    const formattedPrice = new Intl.NumberFormat('en-NG', {
-      style: 'currency',
-      currency: 'NGN',
-      minimumFractionDigits: 2
-    }).format(total);
-
-    // Add a quick feedback pop animation
-    costEstimator.classList.add('pulse');
-    priceDisplay.textContent = formattedPrice;
-
-    setTimeout(() => {
-      costEstimator.classList.remove('pulse');
-    }, 200);
-  }
-
-  // Event triggers for live structural estimation changes
-  weightInput.addEventListener('input', calculateShippingCost);
-  serviceType.addEventListener('change', calculateShippingCost);
-
-  // Form submission handler
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // Sum finalized pricing metrics
+    const overallCost = (baseContainerRate * terminalMarkup).toFixed(2);
     
-    const origin = document.getElementById('origin').value;
-    const dest = document.getElementById('destination').value;
-    
-    alert(`⚡ Redirecting to Nexuist Checkout Gateway Secure Layer...\nRouting: ${origin} ➔ ${dest}\nAmount: ${priceDisplay.textContent}`);
-  });
-});
+    // UI Assignments
+    const originLabel = origin.split('_')[1];
+    const destLabel = destination.split('_')[0];
 
-// Main section ends here
+    document.getElementById('ledgerRoute').innerText = `${originLabel} Terminal ➔ ${destLabel} Central`;
+    document.getElementById('ledgerDays').innerText = `Est. ${distanceDays} Days Sea Transit`;
+    document.getElementById('ledgerCost').innerText = `$${parseFloat(overallCost).toLocaleString()}`;
+}
+
+// Main Section ends here

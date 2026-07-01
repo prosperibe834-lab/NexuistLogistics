@@ -1,14 +1,14 @@
 <script>
-const savedLanguage =
-localStorage.getItem("selectedLanguage");
+    const savedLanguage =
+        localStorage.getItem("selectedLanguage");
 
-if(savedLanguage){
+    if (savedLanguage) {
 
-    document.cookie =
-    "googtrans=/en/" + savedLanguage +
-    "; path=/";
+        document.cookie =
+            "googtrans=/en/" + savedLanguage +
+            "; path=/";
 
-}
+    }
 </script>
 
 <!DOCTYPE html>
@@ -96,112 +96,250 @@ if(savedLanguage){
         </nav>
     </header>
 
+    <!-- Main section starts here -->
 
-<!-- Footer section starts here -->
-
-<footer class="nx-vip-footer">
-    <div class="nx-footer-grid-mesh"></div>
-
-    <div class="nx-footer-container">
-        
-        <div class="nx-footer-brand-col">
-            <a href="index.html" class="nx-footer-logo-wrap">
-                <div class="nx-footer-logo-icon">
-                    <i class='bx bx-navigation'></i>
-                </div>
-                <span class="nx-footer-logo-text">NEXUIST<span class="logo-sub">LOGISTICS</span></span>
-            </a>
-            <p class="nx-footer-brand-desc">
-                High-frequency sovereign distribution networks and real-time ledger tracking loops engineered for modern asset velocity.
-            </p>
-            <div class="nx-footer-contact-matrix">
-                <a href="mailto:operations@nexuist.com" class="nx-contact-link-node">
-                    <i class='bx bx-envelope'></i>
-                    <span>operations@nexuist.com</span>
-                </a>
-                <a href="tel:+1233323383" class="nx-contact-link-node">
-                    <i class='bx bx-phone-call'></i>
-                    <span>+1 (233) 323-383</span>
-                </a>
-                <div class="nx-contact-link-node text-node">
-                    <i class='bx bx-map-pin'></i>
-                    <span>12 N Broadway Street, Middletown, DE, US</span>
-                </div>
+    <main class="domestic-shipping-container">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Domestic Logistics</h1>
+                <p>Fast, reliable nationwide shipping at your fingertips.</p>
             </div>
-        </div>
-
-        <div class="nx-footer-links-col">
-            <h4 class="nx-footer-title-label">Services Infrastructure</h4>
-            <ul class="nx-footer-links-list">
-                <li><a href="domestic.html" class="nx-anchor-vector">Domestic Shipping</a></li>
-                <li><a href="international.html" class="nx-anchor-vector">International Freight</a></li>
-                <li><a href="air-cargo.html" class="nx-anchor-vector">Air Cargo Routing</a></li>
-                <li><a href="ocean-freight.html" class="nx-anchor-vector">Maritime Mesh Lines</a></li>
-                <li><a href="fulfillment.html" class="nx-anchor-vector">Smart Warehousing</a></li>
-            </ul>
-        </div>
-
-        <div class="nx-footer-links-col">
-            <h4 class="nx-footer-title-label">Company Structure</h4>
-            <ul class="nx-footer-links-list">
-                <li><a href="about.html" class="nx-anchor-vector">About Infrastructure</a></li>
-                <li><a href="careers.html" class="nx-anchor-vector">Talent Vectors</a></li>
-                <li><a href="news.html" class="nx-anchor-vector">News &amp; Ledgers</a></li>
-                <li><a href="partners.html" class="nx-anchor-vector">Institutional Partners</a></li>
-                <li><a href="sustainability.html" class="nx-anchor-vector">Green Velocity</a></li>
-            </ul>
-        </div>
-
-        <div class="nx-footer-links-col">
-            <h4 class="nx-footer-title-label">Support Exchange</h4>
-            <ul class="nx-footer-links-list">
-                <li><a href="track.html" class="nx-anchor-vector">Terminal Telemetry</a></li>
-                <li><a href="quote.html" class="nx-anchor-vector">Provision Instance Quote</a></li>
-                <li><a href="help.html" class="nx-anchor-vector">Control Center Hub</a></li>
-                <li><a href="contact.html" class="nx-anchor-vector">Contact Systems Engineers</a></li>
-                <li><a href="faqs.html" class="nx-anchor-vector">Protocol FAQs</a></li>
-            </ul>
-        </div>
-
-        <div class="nx-footer-subscribe-col">
-            <h4 class="nx-footer-title-label">Stay Updated</h4>
-            <p class="nx-subscribe-caption">Subscribe to our secure distribution ledger for real-time routing optimization releases and protocol updates.</p>
-            <form class="nx-subscribe-console" onsubmit="event.preventDefault();">
-                <div class="nx-input-envelope">
-                    <i class='bx bx-user-voice nx-input-micro-icon'></i>
-                    <input type="email" placeholder="Enter operational email" required class="nx-form-field-input">
-                </div>
-                <button type="submit" class="nx-subscribe-action-btn">
-                    <span>Subscribe</span>
-                    <i class='bx bx-right-arrow-alt'></i>
+            <div class="header-action">
+                <button class="btn btn-primary" id="newShipmentBtn">
+                    <i class="bx bx-plus-circle"></i> New Shipment
                 </button>
-            </form>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card animate-fade-in">
+                <div class="stat-icon transit">
+                    <i class="bx bx-package"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>In Transit</h3>
+                    <p class="stat-number">14</p>
+                </div>
+            </div>
+            <div class="stat-card animate-fade-in" style="animation-delay: 0.1s;">
+                <div class="stat-icon delivered">
+                    <i class="bx bx-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Delivered</h3>
+                    <p class="stat-number">184</p>
+                </div>
+            </div>
+            <div class="stat-card animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="stat-icon pending">
+                    <i class="bx bx-time-five"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Pending Pick-up</h3>
+                    <p class="stat-number">3</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-layout">
+
+            <section class="layout-column form-column">
+                <div class="fintech-card">
+                    <div class="card-header">
+                        <h2><i class="bx bx-calculator"></i> Rate Calculator & Booking</h2>
+                    </div>
+                    <form id="domesticRateForm" class="shipping-form">
+                        <div class="form-group">
+                            <label for="origin"><i class="bx bx-map-pin"></i> Origin City</label>
+                            <input type="text" id="origin" placeholder="e.g. Texas" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destination"><i class="bx bx-map"></i> Destination City</label>
+                            <input type="text" id="destination" placeholder="e.g. NewYork" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="weight"><i class="bx bx-anchor"></i> Weight (kg)</label>
+                                <input type="number" id="weight" min="0.1" step="0.1" placeholder="1.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceType"><i class="bx bx-bolt"></i> Speed</label>
+                                <select id="serviceType">
+                                    <option value="standard">Standard Delivery</option>
+                                    <option value="express">Express (Next Day)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="cost-estimator" id="costEstimator">
+                            <span class="estimate-label">Estimated Cost:</span>
+                            <span class="estimate-amount" id="estimatedPrice">$0.00</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent btn-block">
+                            Proceed to Checkout <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="layout-column tracking-column">
+                <div class="fintech-card">
+                    <div class="card-header">
+                        <h2><i class="bx bx-radar"></i> Active Shipments</h2>
+                    </div>
+
+                    <div class="shipment-list">
+                        <div class="shipment-item">
+                            <div class="shipment-meta">
+                                <span class="tracking-id">NEX-DOM-9021</span>
+                                <span class="status-badge tag-transit">In Transit</span>
+                            </div>
+                            <div class="route-timeline">
+                                <div class="route-point"><strong>Texas</strong></div>
+                                <div class="route-line-progress">
+                                    <div class="fill" style="width: 65%;"></div>
+                                </div>
+                                <div class="route-point"><strong>New York</strong></div>
+                            </div>
+                            <p class="eta-text"><i class="bx bx-time"></i> ETA: Tomorrow, 4:00 PM</p>
+                        </div>
+
+                        <div class="shipment-item">
+                            <div class="shipment-meta">
+                                <span class="tracking-id">NEX-DOM-4412</span>
+                                <span class="status-badge tag-pending">Pending</span>
+                            </div>
+                            <div class="route-timeline">
+                                <div class="route-point"><strong>Texas</strong></div>
+                                <div class="route-line-progress">
+                                    <div class="fill" style="width: 0%;"></div>
+                                </div>
+                                <div class="route-point"><strong>New York</strong></div>
+                            </div>
+                            <p class="eta-text"><i class="bx bx-package"></i> Awaiting courier pickup</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
+    </main>
 
-    </div>
+    <!-- Main section ends here -->
 
-    <div class="nx-footer-bottom-bar">
-        <div class="nx-bottom-wrapper">
-            <p class="nx-copyright-text">&copy; 2026 Nexuist Logistics System. All rights reserved.</p>
-            
-            <div class="nx-legal-anchors-row">
-                <a href="privacy.html" class="nx-legal-anchor-node">Privacy Protocol</a>
-                <span class="nx-legal-bullet">&bull;</span>
-                <a href="terms.html" class="nx-legal-anchor-node">Terms of Service Map</a>
+    <!-- Footer section starts here -->
+
+    <footer class="nx-vip-footer">
+        <div class="nx-footer-grid-mesh"></div>
+
+        <div class="nx-footer-container">
+
+            <div class="nx-footer-brand-col">
+                <a href="index.html" class="nx-footer-logo-wrap">
+                    <div class="nx-footer-logo-icon">
+                        <i class='bx bx-navigation'></i>
+                    </div>
+                    <span class="nx-footer-logo-text">NEXUIST<span class="logo-sub">LOGISTICS</span></span>
+                </a>
+                <p class="nx-footer-brand-desc">
+                    High-frequency sovereign distribution networks and real-time ledger tracking loops engineered for
+                    modern asset velocity.
+                </p>
+                <div class="nx-footer-contact-matrix">
+                    <a href="mailto:operations@nexuist.com" class="nx-contact-link-node">
+                        <i class='bx bx-envelope'></i>
+                        <span>operations@nexuist.com</span>
+                    </a>
+                    <a href="tel:+1233323383" class="nx-contact-link-node">
+                        <i class='bx bx-phone-call'></i>
+                        <span>+1 (233) 323-383</span>
+                    </a>
+                    <div class="nx-contact-link-node text-node">
+                        <i class='bx bx-map-pin'></i>
+                        <span>12 N Broadway Street, Middletown, DE, US</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="nx-social-tokens-row">
-                <a href="#" aria-label="Facebook Link" class="nx-social-bubble-anchor"><i class='bx bxl-facebook'></i></a>
-                <a href="#" aria-label="Twitter Link" class="nx-social-bubble-anchor"><i class='bx bxl-twitter'></i></a>
-                <a href="#" aria-label="LinkedIn Link" class="nx-social-bubble-anchor"><i class='bx bxl-linkedin'></i></a>
-                <a href="#" aria-label="Instagram Link" class="nx-social-bubble-anchor"><i class='bx bxl-instagram'></i></a>
+            <div class="nx-footer-links-col">
+                <h4 class="nx-footer-title-label">Services Infrastructure</h4>
+                <ul class="nx-footer-links-list">
+                    <li><a href="domestic.html" class="nx-anchor-vector">Domestic Shipping</a></li>
+                    <li><a href="international.html" class="nx-anchor-vector">International Freight</a></li>
+                    <li><a href="air-cargo.html" class="nx-anchor-vector">Air Cargo Routing</a></li>
+                    <li><a href="ocean-freight.html" class="nx-anchor-vector">Maritime Mesh Lines</a></li>
+                    <li><a href="fulfillment.html" class="nx-anchor-vector">Smart Warehousing</a></li>
+                </ul>
+            </div>
+
+            <div class="nx-footer-links-col">
+                <h4 class="nx-footer-title-label">Company Structure</h4>
+                <ul class="nx-footer-links-list">
+                    <li><a href="about.html" class="nx-anchor-vector">About Infrastructure</a></li>
+                    <li><a href="careers.html" class="nx-anchor-vector">Talent Vectors</a></li>
+                    <li><a href="news.html" class="nx-anchor-vector">News &amp; Ledgers</a></li>
+                    <li><a href="partners.html" class="nx-anchor-vector">Institutional Partners</a></li>
+                    <li><a href="sustainability.html" class="nx-anchor-vector">Green Velocity</a></li>
+                </ul>
+            </div>
+
+            <div class="nx-footer-links-col">
+                <h4 class="nx-footer-title-label">Support Exchange</h4>
+                <ul class="nx-footer-links-list">
+                    <li><a href="track.html" class="nx-anchor-vector">Terminal Telemetry</a></li>
+                    <li><a href="quote.html" class="nx-anchor-vector">Provision Instance Quote</a></li>
+                    <li><a href="help.html" class="nx-anchor-vector">Control Center Hub</a></li>
+                    <li><a href="contact.html" class="nx-anchor-vector">Contact Systems Engineers</a></li>
+                    <li><a href="faqs.html" class="nx-anchor-vector">Protocol FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="nx-footer-subscribe-col">
+                <h4 class="nx-footer-title-label">Stay Updated</h4>
+                <p class="nx-subscribe-caption">Subscribe to our secure distribution ledger for real-time routing
+                    optimization releases and protocol updates.</p>
+                <form class="nx-subscribe-console" onsubmit="event.preventDefault();">
+                    <div class="nx-input-envelope">
+                        <i class='bx bx-user-voice nx-input-micro-icon'></i>
+                        <input type="email" placeholder="Enter operational email" required class="nx-form-field-input">
+                    </div>
+                    <button type="submit" class="nx-subscribe-action-btn">
+                        <span>Subscribe</span>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="nx-footer-bottom-bar">
+            <div class="nx-bottom-wrapper">
+                <p class="nx-copyright-text">&copy; 2026 Nexuist Logistics System. All rights reserved.</p>
+
+                <div class="nx-legal-anchors-row">
+                    <a href="privacy.html" class="nx-legal-anchor-node">Privacy Protocol</a>
+                    <span class="nx-legal-bullet">&bull;</span>
+                    <a href="terms.html" class="nx-legal-anchor-node">Terms of Service Map</a>
+                </div>
+
+                <div class="nx-social-tokens-row">
+                    <a href="#" aria-label="Facebook Link" class="nx-social-bubble-anchor"><i
+                            class='bx bxl-facebook'></i></a>
+                    <a href="#" aria-label="Twitter Link" class="nx-social-bubble-anchor"><i
+                            class='bx bxl-twitter'></i></a>
+                    <a href="#" aria-label="LinkedIn Link" class="nx-social-bubble-anchor"><i
+                            class='bx bxl-linkedin'></i></a>
+                    <a href="#" aria-label="Instagram Link" class="nx-social-bubble-anchor"><i
+                            class='bx bxl-instagram'></i></a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Footer section starts here -->
-
+    <!-- Footer section starts here -->
 
 
 
@@ -216,21 +354,22 @@ if(savedLanguage){
 
 
 
-<div id="google_translate_element" style="display:none"></div>
 
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
-}
-</script>
+    <div id="google_translate_element" style="display:none"></div>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="assets/js/domestic.js"></script>
 

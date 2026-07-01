@@ -1,0 +1,390 @@
+<script>
+const savedLanguage =
+localStorage.getItem("selectedLanguage");
+
+if(savedLanguage){
+
+    document.cookie =
+    "googtrans=/en/" + savedLanguage +
+    "; path=/";
+
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexuistTrack — Logistics Management Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ocean-freight.css">
+</head>
+
+<body>
+
+    <div id="nxPreloader" class="nx-preloader">
+        <div class="nx-preloader-content">
+            <div class="nx-loader-radar">
+                <div class="nx-radar-pulse"></div>
+                <i class='bx bx-radar nx-radar-icon'></i>
+            </div>
+            <h1 class="nx-preloader-text">
+                Nexuist<span class="gradient-text">Track</span>
+            </h1>
+            <div class="nx-progress-bar-wrapper">
+                <div class="nx-progress-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="nx-header">
+        <nav class="nx-navbar">
+            <a href="index.html" class="nx-logo-container">
+                <img src="assets/images/NexuistTracking Logo.png" alt="NexuistTrack Logo" class="nx-logo">
+                <span class="nx-logo-text">Nexuist<span class="gradient-text">Track</span></span>
+            </a>
+
+            <ul class="nx-nav-menu" id="navMenu">
+                <li class="nx-nav-item">
+                    <a href="index.html" class="nx-nav-link">
+                        <i class='bx bx-grid-alt'></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nx-nav-item">
+                    <a href="services.html" class="nx-nav-link">
+                        <i class='bx bx-package'></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="nx-nav-item">
+                    <a href="about.html" class="nx-nav-link">
+                        <i class='bx bx-info-circle'></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nx-nav-item">
+                    <a href="contact.html" class="nx-nav-link">
+                        <i class='bx bx-support'></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nx-nav-actions">
+                <button id="themeToggle" class="nx-theme-btn" aria-label="Toggle Interface Theme">
+                    <i class='bx bx-moon theme-icon'></i>
+                </button>
+                <a href="track.html" class="nx-btn-secondary">
+                    <i class='bx bx-radar'></i>
+                    <span>Track Shipment</span>
+                </a>
+                <a href="quote.html" class="nx-btn-primary">
+                    <span>Get a Quote</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+                <button class="nx-hamburger" id="menuToggle" aria-label="Open Mobile Menu">
+                    <i class='bx bx-menu-alt-right'></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main section starts here -->
+
+<main class="maritime-mesh-container">
+    
+    <section class="maritime-hero animate-fade-in">
+        <div class="hero-card-context">
+            <span class="fintech-badge">
+                <span class="pulse-dot"></span> Secure Ocean Ledger
+            </span>
+            <h1>Intercontinental <br><span class="mesh-gradient">Maritime Mesh Lines</span></h1>
+            <p>Deploying predictable global container routing frameworks across active deep-sea trade vectors with algorithmic scheduling reliability.</p>
+            
+            <div class="quick-stats-strip">
+                <div class="stat-node">
+                    <h4>420K+</h4>
+                    <small>TEU Capacity</small>
+                </div>
+                <div class="stat-node-divider"></div>
+                <div class="stat-node">
+                    <h4>180+</h4>
+                    <small>Global Ports</small>
+                </div>
+                <div class="stat-node-divider"></div>
+                <div class="stat-node">
+                    <h4>99.4%</h4>
+                    <small>On-Time Arrival</small>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#freight-matrix" class="btn-fintech-primary">Secure Freight Allocation</a>
+                <a href="#vessel-fleet" class="btn-fintech-secondary">View Connected Fleet</a>
+            </div>
+        </div>
+
+        <div class="hero-visual-card">
+            <div class="glass-mesh-card">
+                <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=1200" alt="Nexuist Ocean Freight Terminal Container Vessel">
+                <div class="floating-glass-pill">
+                    <i class='bx bx-anchor'></i>
+                    <div>
+                        <h5>NEXUIST TITAN</h5>
+                        <p>Lagos Anchor Hub Inbound</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mesh-features-grid">
+        <div class="feature-tile animate-scroll">
+            <div class="tile-icon-shield src-blue">
+                <i class='bx bx-directions'></i>
+            </div>
+            <h3>Intelligent Mesh Routing</h3>
+            <p>Dynamic ocean route diversification algorithms that completely bypass high-congestion maritime chokepoints.</p>
+            <div class="tile-footer">
+                <span class="fintech-tag-status delivered">Active Optimization</span>
+            </div>
+        </div>
+
+        <div class="feature-tile animate-scroll">
+            <div class="tile-icon-shield src-green">
+                <i class='bx bx-line-chart-down'></i>
+            </div>
+            <h3>Demurrage Mitigation</h3>
+            <p>Predictive automated data tracking safeguards your freight from costly terminal storage penalties.</p>
+            <div class="tile-footer">
+                <span class="fintech-tag-status pending">0% Over-allocations</span>
+            </div>
+        </div>
+
+        <div class="feature-tile animate-scroll">
+            <div class="tile-icon-shield src-gradient">
+                <i class='bx bx-fingerprint'></i>
+            </div>
+            <h3>Sovereign Asset Protection</h3>
+            <p>Smart freight manifests and immutable cargo verification profiles securing your container allocations.</p>
+            <div class="tile-footer">
+                <span class="fintech-tag-status transit">Fully Encrypted</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="freight-matrix" class="interactive-widget-section animate-scroll">
+        <div class="fintech-card">
+            <div class="card-headline">
+                <div>
+                    <h2><i class='bx bx-transfer-alt'></i> Allocation Configurator</h2>
+                    <p>Price premium lane routes and check upcoming vessel space allocations instantly.</p>
+                </div>
+                <div class="live-pulse">
+                    <span class="pulse-circle"></span> Live Rates
+                </div>
+            </div>
+
+            <form id="maritimeMeshForm" class="fintech-form" onsubmit="event.preventDefault();">
+                <div class="form-inputs-layout">
+                    <div class="custom-select-wrapper">
+                        <label>Port of Loading (POL)</label>
+                        <select id="loadingPort" required>
+                            <option value="" disabled selected>Select Origin Terminal</option>
+                            <option value="LOS_APAPA">Apapa Port Complex (LOS) - Nigeria</option>
+                            <option value="PHC_ONNE">Onne Sea Port (PHC) - Nigeria</option>
+                        </select>
+                    </div>
+
+                    <div class="custom-select-wrapper">
+                        <label>Port of Discharge (POD)</label>
+                        <select id="dischargePort" required>
+                            <option value="" disabled selected>Select Destination Terminal</option>
+                            <option value="RTM_NL">Port of Rotterdam (RTM) - Netherlands</option>
+                            <option value="HAM_DE">Port of Hamburg (HAM) - Germany</option>
+                            <option value="MLA_VAL">Grand Harbour (MLA) - Malta</option>
+                        </select>
+                    </div>
+
+                    <div class="custom-select-wrapper">
+                        <label>Container Configuration</label>
+                        <select id="containerSize" required>
+                            <option value="20">20ft Standard Dry Van (1 TEU)</option>
+                            <option value="40" selected>40ft High Cube Container (2 TEU)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-action-trigger" onclick="calculateOceanRoute()">
+                    Generate Freight Ledger <i class='bx bx-chevrons-right'></i>
+                </button>
+            </form>
+
+            <div id="maritimeOutput" class="ledger-output-container hidden">
+                <div class="ledger-row">
+                    <span>Route Lane Assignment</span>
+                    <strong id="ledgerRoute">--</strong>
+                </div>
+                <div class="ledger-row">
+                    <span>Ocean Transit Velocity</span>
+                    <strong id="ledgerDays" class="text-transit">--</strong>
+                </div>
+                <div class="ledger-row final-total">
+                    <span>Guaranteed Space Quote</span>
+                    <strong id="ledgerCost" class="text-amount">$0.00</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+    <!-- Main section ends here -->
+
+<!-- Footer section starts here -->
+
+<footer class="nx-vip-footer">
+    <div class="nx-footer-grid-mesh"></div>
+
+    <div class="nx-footer-container">
+        
+        <div class="nx-footer-brand-col">
+            <a href="index.html" class="nx-footer-logo-wrap">
+                <div class="nx-footer-logo-icon">
+                    <i class='bx bx-navigation'></i>
+                </div>
+                <span class="nx-footer-logo-text">NEXUIST<span class="logo-sub">LOGISTICS</span></span>
+            </a>
+            <p class="nx-footer-brand-desc">
+                High-frequency sovereign distribution networks and real-time ledger tracking loops engineered for modern asset velocity.
+            </p>
+            <div class="nx-footer-contact-matrix">
+                <a href="mailto:operations@nexuist.com" class="nx-contact-link-node">
+                    <i class='bx bx-envelope'></i>
+                    <span>operations@nexuist.com</span>
+                </a>
+                <a href="tel:+1233323383" class="nx-contact-link-node">
+                    <i class='bx bx-phone-call'></i>
+                    <span>+1 (233) 323-383</span>
+                </a>
+                <div class="nx-contact-link-node text-node">
+                    <i class='bx bx-map-pin'></i>
+                    <span>12 N Broadway Street, Middletown, DE, US</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Services Infrastructure</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="domestic.html" class="nx-anchor-vector">Domestic Shipping</a></li>
+                <li><a href="international.html" class="nx-anchor-vector">International Freight</a></li>
+                <li><a href="air-cargo.html" class="nx-anchor-vector">Air Cargo Routing</a></li>
+                <li><a href="ocean-freight.html" class="nx-anchor-vector">Maritime Mesh Lines</a></li>
+                <li><a href="fulfillment.html" class="nx-anchor-vector">Smart Warehousing</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Company Structure</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="about.html" class="nx-anchor-vector">About Infrastructure</a></li>
+                <li><a href="careers.html" class="nx-anchor-vector">Talent Vectors</a></li>
+                <li><a href="news.html" class="nx-anchor-vector">News &amp; Ledgers</a></li>
+                <li><a href="partners.html" class="nx-anchor-vector">Institutional Partners</a></li>
+                <li><a href="sustainability.html" class="nx-anchor-vector">Green Velocity</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-links-col">
+            <h4 class="nx-footer-title-label">Support Exchange</h4>
+            <ul class="nx-footer-links-list">
+                <li><a href="track.html" class="nx-anchor-vector">Terminal Telemetry</a></li>
+                <li><a href="quote.html" class="nx-anchor-vector">Provision Instance Quote</a></li>
+                <li><a href="help.html" class="nx-anchor-vector">Control Center Hub</a></li>
+                <li><a href="contact.html" class="nx-anchor-vector">Contact Systems Engineers</a></li>
+                <li><a href="faqs.html" class="nx-anchor-vector">Protocol FAQs</a></li>
+            </ul>
+        </div>
+
+        <div class="nx-footer-subscribe-col">
+            <h4 class="nx-footer-title-label">Stay Updated</h4>
+            <p class="nx-subscribe-caption">Subscribe to our secure distribution ledger for real-time routing optimization releases and protocol updates.</p>
+            <form class="nx-subscribe-console" onsubmit="event.preventDefault();">
+                <div class="nx-input-envelope">
+                    <i class='bx bx-user-voice nx-input-micro-icon'></i>
+                    <input type="email" placeholder="Enter operational email" required class="nx-form-field-input">
+                </div>
+                <button type="submit" class="nx-subscribe-action-btn">
+                    <span>Subscribe</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="nx-footer-bottom-bar">
+        <div class="nx-bottom-wrapper">
+            <p class="nx-copyright-text">&copy; 2026 Nexuist Logistics System. All rights reserved.</p>
+            
+            <div class="nx-legal-anchors-row">
+                <a href="privacy.html" class="nx-legal-anchor-node">Privacy Protocol</a>
+                <span class="nx-legal-bullet">&bull;</span>
+                <a href="terms.html" class="nx-legal-anchor-node">Terms of Service Map</a>
+            </div>
+
+            <div class="nx-social-tokens-row">
+                <a href="#" aria-label="Facebook Link" class="nx-social-bubble-anchor"><i class='bx bxl-facebook'></i></a>
+                <a href="#" aria-label="Twitter Link" class="nx-social-bubble-anchor"><i class='bx bxl-twitter'></i></a>
+                <a href="#" aria-label="LinkedIn Link" class="nx-social-bubble-anchor"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" aria-label="Instagram Link" class="nx-social-bubble-anchor"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer section starts here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="google_translate_element" style="display:none"></div>
+
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="assets/js/ocean-freight.js"></script>
+
+</body>
+
+</html>

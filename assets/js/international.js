@@ -76,58 +76,81 @@ document.addEventListener("DOMContentLoaded", () => {
 // Main section starts here
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('domesticRateForm');
-  const weightInput = document.getElementById('weight');
-  const serviceType = document.getElementById('serviceType');
-  const priceDisplay = document.getElementById('estimatedPrice');
-  const costEstimator = document.getElementById('costEstimator');
+  const modeCards = document.querySelectorAll('.mode-card');
+  const originSelect = document.getElementById('intlOrigin');
+  const destSelect = document.getElementById('intlDest');
+  const weightInput = document.getElementById('cargoWeight');
+  const valueInput = document.getElementById('cargoValue');
+  const incotermsSelect = document.getElementById('incoterms');
+  const priceDisplay = document.getElementById('intlEstimatedPrice');
+  const estimatorBox = document.getElementById('intlCostEstimator');
+  const timelineProgress = document.getElementById('freightTimelineProgress');
+  const freightForm = document.getElementById('intlFreightForm');
 
-  // Base Calculation Configuration for Nigeria Regions
-  const BASE_RATE = 1500;
-  const PER_KG_RATE = 450;
+  let activeFreightMode = 'air';
 
-  function calculateShippingCost() {
+  // Toggle Mode Active Selections
+  modeCards.forEach(card => {
+    card.addEventListener('click', () => {
+      modeCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      activeFreightMode = card.dataset.mode;
+      
+      // Update dummy progress bars dynamically based on transit selections
+      if (activeFreightMode === 'ocean') {
+        timelineProgress.style.width = '20%';
+      } else {
+        timelineProgress.style.width = '45%';
+      }
+      calculateInternationalQuote();
+    });
+  });
+
+  function calculateInternationalQuote() {
     const weight = parseFloat(weightInput.value) || 0;
-    if (weight === 0) {
-      priceDisplay.textContent = '₦0.00';
+    const itemValue = parseFloat(valueInput.value) || 0;
+
+    if (weight <= 0 || originSelect.value === destSelect.value) {
+      priceDisplay.textContent = '$0.00';
       return;
     }
 
-    let total = BASE_RATE + (weight * PER_KG_RATE);
+    // Set variable weights for Sea routes vs Air lines
+    let ratePerKg = activeFreightMode === 'air' ? 9.25 : 3.15;
+    let baseRate = activeFreightMode === 'air' ? 150.00 : 380.00;
 
-    // Apply Premium speed modifier
-    if (serviceType.value === 'express') {
-      total *= 1.5; 
+    let subTotal = baseRate + (weight * ratePerKg);
+
+    // Apply premium cargo liability insurance loading parameters
+    if (incotermsSelect.value === 'full') {
+      subTotal += (itemValue * 0.025);
     }
 
-    // Fintech standard currency string formatting
-    const formattedPrice = new Intl.NumberFormat('en-NG', {
+    // Output formatted premium Fintech string currency representation
+    const formattedPrice = new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'NGN',
-      minimumFractionDigits: 2
-    }).format(total);
+      currency: 'USD'
+    }).format(subTotal);
 
-    // Add a quick feedback pop animation
-    costEstimator.classList.add('pulse');
+    estimatorBox.classList.add('pulse');
     priceDisplay.textContent = formattedPrice;
 
     setTimeout(() => {
-      costEstimator.classList.remove('pulse');
+      estimatorBox.classList.remove('pulse');
     }, 200);
   }
 
-  // Event triggers for live structural estimation changes
-  weightInput.addEventListener('input', calculateShippingCost);
-  serviceType.addEventListener('change', calculateShippingCost);
+  // Live Input Observers
+  weightInput.addEventListener('input', calculateInternationalQuote);
+  valueInput.addEventListener('input', calculateInternationalQuote);
+  originSelect.addEventListener('change', calculateInternationalQuote);
+  destSelect.addEventListener('change', calculateInternationalQuote);
+  incotermsSelect.addEventListener('change', calculateInternationalQuote);
 
-  // Form submission handler
-  form.addEventListener('submit', (e) => {
+  // Form submission sequence
+  freightForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const origin = document.getElementById('origin').value;
-    const dest = document.getElementById('destination').value;
-    
-    alert(`⚡ Redirecting to Nexuist Checkout Gateway Secure Layer...\nRouting: ${origin} ➔ ${dest}\nAmount: ${priceDisplay.textContent}`);
+    alert(`Secure International Manifest Dispatched!\nRoute: ${originSelect.value} ➔ ${destSelect.value}\nMode: ${activeFreightMode.toUpperCase()}\nEstimated Cost: ${priceDisplay.textContent}`);
   });
 });
 
